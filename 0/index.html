@@ -97,11 +97,9 @@ position:absolute;
 
 <script>
 var delay; // delay = setTimeout(function(){  }, 3000);
+var step = 0;
+var DOWN = 3000;
 
-   var step = 0;
-   var DOWN = 3000;
-   
-   
 function scrollbottom() {
     var elmnt = document.getElementById("body");
     elmnt.scrollTop = DOWN;
