@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>emptiness( ){6}</title>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="../inventory.js"></script>
+<style>
+@font-face{
+font-family:DOS;
+src:url(fonts/DOS.ttf);
+}
+.buttons-container, .non-admin-buttons-container{
+    visibility:hidden;
+}
+iframe{
+    visibility:hidden;
+}
+body{
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background-color: #101010;
+	color:white;
+	font-size:13pt;
+	text-align:center;
+	           overflow: hidden;
+
+}
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background-color: black;
+    border-left: 0px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+.top{
+	position:relative;
+	width:450px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:10px;	
+	margin-top:15%;
+	border-style:ridge;
+	min-height: 110px;
+	
+}
+#input{
+	margin-top:20px;
+	position:relative;
+	width:400px;
+	left:25px;
+	font-size:20pt;
+	display:none;
+}
+input{	
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	position:relative;
+	text-align:center;	
+background:none;
+border-style:hidden;		
+outline-style:none;
+color:white;
+width: 20px;
+	font-size:16pt;
+}
+
+
+.blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+a{
+color:white;	
+}
+
+.fog{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:100%;
+margin:0px;
+background-size:200% 1080px;
+background-repeat: repeat-x;
+background-image: url(img/6/fog.png); 
+
+    animation-name: fog1;
+    animation-duration: 120s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+	-webkit-animation-name: fog1;
+    -webkit-animation-duration: 120s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+
+}
+#fog2{
+background-image: url(img/6/fog2.png);
+
+
+    animation-name: fog2;
+    animation-duration: 150s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+	-webkit-animation-name: fog2;
+    -webkit-animation-duration: 150s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+
+@-webkit-@keyframes fog1 {  
+     from { background-position: left center ;
+      } to { background-position: 200% center ; }
+}
+@keyframes fog1 {  
+     from { background-position: left center ;
+      } to { background-position: 200% center ; }
+}
+
+@-webkit-@keyframes fog2 {  
+     from { background-position: right center ;
+      } to { background-position: -100% center ; }
+}
+@keyframes fog2 {  
+     from { background-position: right center ;
+      } to { background-position: -100% center; }
+}
+
+
+
+.thunderclap{
+
+position:absolute;
+left:0;
+height:100%;
+width: 100%;
+margin:0;
+top:0;
+}
+.thunderclap img{
+position:relative;
+height:90%;
+width:auto;
+bottom:0px;
+
+}
+
+.gates{
+position:absolute;
+width:30%;
+height:auto;
+bottom: 30%;
+visibility:hidden;
+opacity:0;
+cursor:pointer;
+animation-name: open;
+    animation-duration: 20s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+	transition: all 7s ease;
+
+}
+
+@keyframes open {  
+0% {
+        display: none;
+        opacity: 0;
+    }
+
+    50% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+
+}
+
+.scale{
+transform: scaleX(0.1);
+}
+.into{
+width: 80%;
+opacity:0;
+bottom:-10%;
+}
+.bye{
+display:none;
+}
+.appear{
+visibility:visible;
+opacity:1;
+}
+
+
+#gate1{
+left:20%;
+}
+#gate2{
+right:20%;
+}
+
+#active1, #active2{
+background:WHITE;
+color:BLACK;
+}
+
+</style>
+</head>
+<body>
+
+
+<audio controls loop autoplay style="position:absolute; top:-50px;">
+  <source src="audio/empty.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+<audio controls loop autoplay id="stepus" style="position:absolute; top:-50px;">
+  <source src="audio/steps.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<audio controls id="run" style="position:absolute; top:-50px;">
+  <source src="audio/run.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+
+<audio id="thunder" controls style="position:absolute; top:-40px;">
+  <source src="audio/thunder.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<audio id="gatess" controls style="position:absolute; top:-40px;">
+  <source src="audio/gates.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<audio id="sound" controls style="position:absolute; top:-40px;">
+  <source src="audio/sound.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+
+
+
+<div class="thunderclap" id="thun" style="background:black;">
+<img id="thund" src="img/6/thunder0.png">
+</div>
+<div class="hidden">
+	<script type="text/javascript">
+
+
+	
+		<!--//--><![CDATA[//><!--
+
+			if (document.images) {
+				img1 = new Image();
+				img2 = new Image();
+				img3 = new Image();
+				img4 = new Image();
+
+				img1.src = "img/6/thunder0.png";
+				img2.src = "img/6/thunder1.png";
+				img3.src = "img/6/thunder2.png";
+				img4.src = "img/6/thunder3.png";
+			}
+
+		//--><!]]>
+	</script>
+</div>
+
+<div class="fog" >
+</div>
+<div class="fog" id="fog2">
+</div>
+
+
+<img id="gate1" onclick="function(){flag=1;}" class="gates" src="img/6/gate1.png">
+<img id="gate2" onclick="function(){flag=1;}" class="gates" src="img/6/gate2.png">
+<script>
+var flag = 0;
+
+$( ".gates" ).click(function() {
+if(flag ==0){
+flag=1;
+if(flag!=0){
+document.getElementById("gatess").play();
+  $(".gates").addClass("scale");
+  $( "#gate1" ).animate({
+   left:"7%"
+  }, 0 );
+  $( "#gate2" ).animate({
+   right:"7%"
+  }, 0 );
+setTimeout(function(){   $(".gates").addClass("into"); $( "#gate1" ).animate({left:"-50%"}, 0 );$( "#gate2" ).animate({right:"-50%"}, 0 );  document.getElementById("sound").play() }, 5500);
+setTimeout(function(){   $(".gates").addClass("bye") },14000);
+ $( ".fog" ).delay(6500).fadeOut( 2000 ) 
+  }
+  }
+
+});
+
+</script>
+ 
+
+<div class="top">         
+G.bio
+<p id="window">
+
+</p>
+<div id="input">
+><input id="getname" onkeydown="changesize();" onkeyup="changesize();" type="text" class="blink_me" placeholder="█"/> 
+
+</div>
+</div>
+
+
+
+
+
+
+  
+<script>
+
+var name;
+
+
+
+$( document ).ready(function() {
+	 $( ".top" ).fadeOut( 0 );
+	 $( ".fog" ).fadeOut( 0 );
+	 $( ".thunderclap" ).fadeOut( 0 );
+	 $( ".fog" ).fadeIn( 9000 );
+	 
+	setTimeout(function(){thunderclap();}, 8000);
+	 
+
+});
+
+
+function thunderclap(){
+var thund = document.getElementById("thun");
+document.getElementById("thunder").play();
+	 $( ".thunderclap" ).fadeIn( 1 );
+setTimeout(function(){document.getElementById("thund").src = "img/6/thunder1.png"; thund.style.background = "white" }, 40);
+setTimeout(function(){document.getElementById("thund").src = "img/6/thunder2.png"; thund.style.background = "black" }, 80);
+setTimeout(function(){document.getElementById("thund").src = "img/6/thunder3.png"; thund.style.background = "white" }, 120);
+setTimeout(function(){document.getElementById("thund").src = "img/6/thunder0.png"; thund.style.background = "black" }, 160);
+setTimeout(function(){document.getElementById("thund").src = "img/6/thunder1.png"; thund.style.background = "white" }, 200);
+setTimeout(function(){document.getElementById("thund").src = "img/6/thunder2.png"; thund.style.background = "black" }, 240);
+setTimeout(function(){document.getElementById("thund").src = "img/6/thunder3.png"; thund.style.background = "white" }, 280);
+	 $( ".thunderclap" ).delay(280).fadeOut( 0 );
+setTimeout(function(){ textready();}, 280);
+
+}
+
+
+
+function textready(){
+
+
+  $( ".top" ).fadeIn( 2000 );
+
+setTimeout(function(){printg("Hey...")}, 3000);
+setTimeout(function(){printg("In the whole rush...")}, 6000);
+setTimeout(function(){print("I forgot to ask your name...")}, 9000);
+setTimeout(function(){$( "#input" ).fadeIn( 700 ); document.getElementById("getname").focus()
+}, 10000);
+
+}
+
+function changesize(){
+	var length = (document.getElementById("getname").value.length + 1 ) * 12;
+	var input = document.getElementById("getname");
+	if(length > 20)
+		input.style.width = length+"px";
+	else
+		input.style.width = "20px";
+
+	
+}
+
+$("#getname").keyup(function (e) {
+    if (e.keyCode == 13) {
+		$( "#window" ).fadeOut( 0 );
+	document.getElementById("input").style.display = "none";
+		name = document.getElementById("getname").value;
+		$( "#window" ).fadeIn( 700 );
+document.getElementById("window").innerHTML = "Is your name " + document.getElementById("getname").value + "? <br> <a id='option1' onclick='yes(1);' href='#'>YES</a> <a id='option2' onclick='no(1);' href='#'>NO</a>";	
+        
+    }
+});
+
+
+
+
+
+
+// ANSWERS:
+
+function no(a){
+if(a==1){
+	print("What is your name?...");
+	document.getElementById("input").style.display = "block";
+	}
+
+if(a==2){
+/*
+-No: Oh... well... It's like... feeling useless and dead... even though you are still alive... 
+	You constantly feel this pressure between your back and your chest... And you feel like something is causing that... 
+	But at the same time... You can't put your finger on what's exactly the thing that's causing it. 
+	And that pressure just continues and goes on... and on...
+	and on...
+	And thinking about other things or keeping yourself as busy as possible doesn't make it go away. Not by a chance. 
+	And you just end up... Letting it be. You end up embracing it, accepting its forms and ways. But you never end up not despising it one single second that passes. 
+	
+	You want it to die. You end up in despair. You just want it to go away... forever... No matter how... 
+	No matter the means... No matter the result... No matter who has to die first... The emptiness... or yourself...
+	...
+	... I... I'm so sorry...
+	... .a. ... Please don't mind me, you don't want a depressed fuck to slow you down. I'm okay, all right?
+	Let's just continue...
+	...
+	Thanks
+
+
+*/
+
+setTimeout(function(){printgg("Oh... well... It's like... feeling useless and dead... even though you are still alive... ", 
+4000);}, 0);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("You constantly feel this pressure between your back and your chest... And you feel like something is causing that... ", 
+4000);}, 5500);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("But at the same time... You can't put your finger on what's exactly the thing that's causing it. ", 
+4000);}, 11000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("	And that pressure just continues and goes on... and on...", 
+3000);}, 16500);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("and on...",
+2500);}, 21000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("And thinking about other things or keeping yourself as busy as possible doesn't make it go away. Not by a chance. ",
+4000);}, 25000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("And you just end up... Letting it be. You end up embracing it, accepting its forms and ways. But you never end up not despising it one single second that passes. ",
+6000);}, 30500);//<== + last + 1500 = VVV
+
+setTimeout(function(){printgg("You want it to die. You end up in despair. You just want it to go away... forever... No matter how... ", 
+4000);}, 38000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("No matter the means... No matter the result... No matter who has to die first... The emptiness... or yourself...", 
+4000);}, 43500);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("...", 
+2500);}, 49000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg(".. I... I'm so sorry...", 
+3000);}, 53000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("... "+name+" ... Please don't mind me, heheh. You don't want a depressed fuck to slow you down, right? heheheh. I'm okay, all right?", 
+4000);}, 57700);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("Let's just continue...", 
+3000);}, 63200);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("...", 
+3000);}, 67700);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("Thanks", 
+3000);}, 72200);//<== + last + 1500 = VVV
+
+
+setTimeout(function(){continue_();
+}, 3000+1500+72200);
+
+
+}
+
+if(a==3){
+/*No3
+        	Oh... Is emptiness something else for you then?*/
+$( "#window" ).fadeOut( 300 )
+setTimeout(function(){$( "#window" ).fadeIn( 700 ); document.getElementById("window").innerHTML = "Oh... Is emptiness something else for you then? <br> <a id='option1' onclick='yes(4)' href='#'>YES</a> <a id='option2' onclick='no(4)' href='#'>NO</a>"	; 
+}, 300);
+
+}
+
+if(a==4){
+
+setTimeout(function(){printgg("Then... I just can't understand, "+name+"... But at the same time... I think I do...", 2000);
+}, 0000); //<== + last^^ + 1500
+setTimeout(function(){printgg("Thanks for sharing this moment, though", 2000);
+}, 2000+1500); //<== + last^^ + 1500
+setTimeout(function(){printgg("Let's go...", 3000);
+}, 2000+3000+1500*2); //<== + last^^ + 1500
+setTimeout(function(){continue_();
+}, 2000+3000+3000+1500*3);
+
+}
+
+}
+
+
+
+
+
+function yes(a){
+if(a==1){
+	localStorage.name = name;
+	localStorage.cookie = true;
+	setTimeout(function(){printg(""+ name + ", eh? I can go with that...")}, 0);
+	setTimeout(function(){printg("... "  +name+ "... Have you ever felt...")}, 3000);
+	setTimeout(function(){$( "#window" ).fadeIn( 700 ); document.getElementById("window").innerHTML = "EMPTINESS? <br> <a id='option1' onclick='yes(2)' href='#'>YES</a> <a id='option2' onclick='no(2)' href='#'>NO</a>"	}, 6000);
+		}
+		
+if(a==2){
+
+/*
+	So you know...
+    that sensation of helplessness
+    That feeling of being lost
+    That constant thought of usefulness.. and yet... feeling no despair at all.
+    That sensation of being dead while still breathing... every inhalation is a torture... A torture that not even you can't feel.
+    Ending up embracing every second of that tasteless bitterness, like a long time friend that should have gone a long time ago... 
+	A friend that should have died in THAT long gone moment...
+    You know what I mean right?*/
+
+setTimeout(function(){printgg("So you know...", 2000);
+}, 0);
+setTimeout(function(){printgg("That sensation of being helpless... Alone in the bast void...", 3000);
+}, 2000+1500);
+setTimeout(function(){printgg("That constant thought of being useless... ", 3000);
+}, 2000+3000+1500*2);
+setTimeout(function(){printgg("That sensation of being dead while still breathing... every inhalation, every breath is torture and pain...", 4000);
+}, 2000+3000+3000+1500*3);
+setTimeout(function(){printgg("And the only thing left to do is to embrace it, hoping it will hurt less... You hold on stronger and tighter... Hoping to cease the frustration and anger...",6000);
+}, 2000+3000+3000+4000+1500*4);
+setTimeout(function(){printgg("But it just STAYS... Like a long time friend that should have died a LONG time ago...",3000);
+}, 2000+3000+3000+4000+6000+1500*5);
+setTimeout(function(){$( "#window" ).fadeIn( 700 ); document.getElementById("window").innerHTML = "You know what I mean... right? <br> <a id='option1' onclick='yes(3)' href='#'>YES</a> <a id='option2' onclick='no(3)' href='#'>NO</a>"	; 
+}, 2000+3000+3000+4000+6000+3000+1500*6);
+
+
+}		
+if(a==3){
+
+/*-Yes
+        I'm glad I can have someone that understands my pain...	*/
+setTimeout(function(){printgg("I'm glad I can have someone that understands my pain...", 2000);
+}, 0000); //<== + last^^ + 1500
+setTimeout(function(){printgg("Thanks for sharing this moment, " +name+ " ", 2000);
+}, 2000+1500);
+setTimeout(function(){printgg(" ... I needed it", 2000);
+}, 2000+2000+1500*2);
+setTimeout(function(){continue_();
+}, 2000+2000+2000+1500*3);
+
+}
+
+if(a==4){
+
+/*
+I see... Don't worry... Burdens are something that shouldn't be shared with anyone...I understand... haha... 
+					What a depressing idiot would do that? Am I right?... hehe...
+*/
+
+setTimeout(function(){printgg("I see... Don't worry... Burdens are something that shouldn't be shared with anyone...I understand... haha... ", 3000);
+}, 0000); //<== + last^^ + 1500
+setTimeout(function(){printgg("What a depressing idiot would do that? Am I right?... hehe...", 2000);
+}, 3000+1500); //<== + last^^ + 1500
+setTimeout(function(){printgg("...", 6000);
+}, 3000+2000+1500*2); //<== + last^^ + 1500
+setTimeout(function(){printgg("Thanks for sharing this moment, though", 2000);
+}, 3000+2000+6000+1500*3); //<== + last^^ + 1500
+setTimeout(function(){printgg("...", 3000);
+}, 3000+2000+6000+2000+1500*4); //<== + last^^ + 1500
+setTimeout(function(){printgg("I needed it", 3000); 
+}, 3000+2000+6000+2000+3000+1500*5); //<== + last^^ + 1500
+
+setTimeout(function(){continue_();
+}, 3000+2000+6000+2000+3000+3000+1500*6);
+
+}
+
+			
+		
+}
+
+
+function continue_(){
+ $( "#window" ).fadeOut( 500 );
+	setTimeout(function(){printgg("C'mon. Let's keep walking. We should find something soon...", 3000); 
+}, 0); //<== + last^^ + 1500
+	// $( ".top" ).delay(3500).fadeOut( 1500 );
+	setTimeout(function(){ gates() }, 4500);
+
+}
+
+
+	function gates(){
+
+
+		setTimeout(function(){printg("Hey...")}, 0);
+		//$( ".top" ).fadeIn( 3000 );
+		setTimeout(function(){printg("I CAN SEE SOMETHING!")}, 3000);
+		setTimeout(function(){printg("LET'S GO!!"); document.getElementById("run").play(); document.getElementById("stepus").pause()}, 6000);
+		$( ".top" ).delay(6000).fadeOut( 3000 );
+		setTimeout(function(){$(".gates").addClass("appear"); document.getElementById("gate1").style.visibility="visible"; document.getElementById("gate2").style.visibility="visible"}, 10000);
+
+
+
+
+}
+
+
+
+
+
+
+function printg(a){
+	  $( "#window" ).fadeOut( 0 );
+	  $( "#window" ).fadeIn( 2000 );
+document.getElementById("window").innerHTML = a;	
+	  $( "#window" ).fadeOut( 1000 );
+}
+function print(a){
+	  $( "#window" ).fadeOut( 0 );
+	  $( "#window" ).fadeIn( 2000 );
+document.getElementById("window").innerHTML = a;
+}
+
+function printgg(a,b){
+	  $( "#window" ).fadeOut( 0 );
+	  $( "#window" ).fadeIn( 800 );
+document.getElementById("window").innerHTML = a;
+$( "#window" ).delay( b );
+	  $( "#window" ).fadeOut( 700 );
+}
+
+
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 37: // left
+
+		var e = document.getElementById("option1");
+		e.id = "active1";
+		var f = document.getElementById("active2");
+		f.id = "option2";
+        break;
+
+        case 39: // right
+
+		var e = document.getElementById("option2");
+		e.id = "active2";
+		var f = document.getElementById("active1");
+		f.id = "option1";
+
+		
+        break;
+
+		
+		case 13: // enter
+		
+		    eval($('#active1').attr('onclick'));
+			eval($('#active2').attr('onclick'));
+		
+        break;
+		
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
+
+</script>
+</body>
+</html>

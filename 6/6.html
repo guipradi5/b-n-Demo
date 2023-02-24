@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>_emptyness_{6}</title>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="../inventory.js"></script>
+<style>
+@font-face{
+font-family:DOS;
+src:url(fonts/DOS.ttf);
+}
+.buttons-container, .non-admin-buttons-container{
+    visibility:hidden;
+}
+iframe{
+    visibility:hidden;
+}
+body{
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background-color: #101010;
+	color:white;
+	font-size:13pt;
+	text-align:center;
+}
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background-color: black;
+    border-left: 0px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+.top{
+	position:relative;
+	width:450px;
+	left:37%;
+	padding:5px;	
+	margin-top:5%;
+	border-style:ridge;
+	min-height: 110px;
+	
+}
+#input{
+	margin-top:20px;
+	position:relative;
+	width:400px;
+	left:25px;
+	font-size:20pt;
+	display:none;
+}
+input{	
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	position:relative;
+	text-align:center;	
+background:none;
+border-style:hidden;		
+outline-style:none;
+color:white;
+width: 20px;
+	font-size:16pt;
+}
+
+
+.blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+a{
+	
+color:white;	
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+-Yes2:
+	
+    	
+        -No3
+        	Oh... Is emptiness something else for you then?
+            	-Yes4
+                	I see... Don't worry... Burdens are something that shouldn't be shared with anyone...I understand... haha... 
+					What a depressing idiot would do that? Am I right?... hehe...
+                -No3
+                	Then... I just can't understand, .a. ... But at the same time... I think I do...
+                
+                Thanks for sharing this moment, though
+                Let's go
+
+ 
+
+<div class="top">         
+G.bio:
+<p id="window">
+
+</p>
+<div id="input">
+><input id="getname" onkeydown="changesize();" onkeyup="changesize();" type="text" class="blink_me" placeholder="█"/> 
+
+</div>
+</div>
+
+
+
+
+
+
+  
+<script>
+
+var name;
+
+
+
+ $( document ).ready(function() {
+	 
+  $( ".top" ).fadeOut( 0 );
+  $( ".top" ).fadeIn( 2000 );
+
+setTimeout(function(){printg("Hey...")}, 3000);
+setTimeout(function(){printg("In the whole rush...")}, 6000);
+setTimeout(function(){print("I forgot to ask your name...")}, 9000);
+setTimeout(function(){$( "#input" ).fadeIn( 700 )/*;document.getElementById("input").style.display = "block"*/}, 10000);
+
+});
+
+function changesize(){
+	var length = (document.getElementById("getname").value.length + 1 ) * 12;
+	var input = document.getElementById("getname");
+	if(length > 20)
+		input.style.width = length+"px";
+	else
+		input.style.width = "20px";
+
+	
+}
+
+$("#getname").keyup(function (e) {
+    if (e.keyCode == 13) {
+		$( "#window" ).fadeOut( 0 );
+	document.getElementById("input").style.display = "none";
+		name = document.getElementById("getname").value;
+		$( "#window" ).fadeIn( 700 );
+document.getElementById("window").innerHTML = "Is your name " + document.getElementById("getname").value + "? <br> <a onclick='yes(1)' href='#'>YES</a> <a onclick='no(1)' href='#'>NO</a>";	
+        
+    }
+});
+
+
+
+
+
+
+// ANSWERS:
+
+function no(a){
+if(a==1){
+	print("What is your name?...");
+	document.getElementById("input").style.display = "block";
+	}
+
+if(a==2){
+/*
+-No: Oh... well... It's like... feeling useless and dead... even though you are still alive... 
+	You constantly feel this pressure between your back and your chest... And you feel like something is causing that... 
+	But at the same time... You can't put your finger on what's exactly the thing that's causing it. 
+	And that pressure just continues and goes on... and on...
+	and on...
+	And thinking about other things or keeping yourself as busy as possible doesn't make it go away. Not by a chance. 
+	And you just end up... Letting it be. You end up embracing it, accepting its forms and ways. But you never end up not despising it one single second that passes. 
+	
+	You want it to die. You end up in despair. You just want it to go away... forever... No matter how... 
+	No matter the means... No matter the result... No matter who has to die first... The emptiness... or yourself...
+	...
+	... I... I'm so sorry...
+	... .a. ... Please don't mind me, you don't want a depressed fuck to slow you down. I'm okay, all right?
+	Let's just continue...
+	...
+	Thanks
+
+
+*/
+
+setTimeout(function(){printgg("Oh... well... It's like... feeling useless and dead... even though you are still alive... ", 
+4000);}, 0);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("You constantly feel this pressure between your back and your chest... And you feel like something is causing that... ", 
+4000);}, 5500);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("But at the same time... You can't put your finger on what's exactly the thing that's causing it. ", 
+4000);}, 11000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("	And that pressure just continues and goes on... and on...", 
+3000);}, 16500);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("and on...",
+2500);}, 21000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("And thinking about other things or keeping yourself as busy as possible doesn't make it go away. Not by a chance. ",
+4000);}, 25000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("And you just end up... Letting it be. You end up embracing it, accepting its forms and ways. But you never end up not despising it one single second that passes. ",
+6000);}, 30500);//<== + last + 1500 = VVV
+
+setTimeout(function(){printgg("You want it to die. You end up in despair. You just want it to go away... forever... No matter how... ", 
+4000);}, 38000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("No matter the means... No matter the result... No matter who has to die first... The emptiness... or yourself...", 
+4000);}, 43500);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("...", 
+2500);}, 49000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg(".. I... I'm so sorry...", 
+3000);}, 53000);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("... "+name+" ... Please don't mind me, you don't want a depressed fuck to slow you down. I'm okay, all right?", 
+4000);}, 57700);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("Let's just continue...", 
+3000);}, 63200);//<== + last + 1500 = VVV
+setTimeout(function(){printgg("...", 
+3000);}, 67700);//<== + last + 1500 = VVV
+setTimeout(function(){print("Thanks", 
+3000);}, 72200);//<== + last + 1500 = VVV
+
+
+//window.locat
+
+
+}
+
+
+}
+
+
+
+
+
+function yes(a){
+if(a==1){
+	localStorage.name = name;
+	localStorage.cookie = true;
+	setTimeout(function(){printg(""+ name + ", eh? I can go with that...")}, 0);
+	setTimeout(function(){printg("... "  +name+ "... Have you ever felt...")}, 3000);
+	setTimeout(function(){$( "#window" ).fadeIn( 700 ); document.getElementById("window").innerHTML = "EMPTINESS? <br> <a onclick='yes(2)' href='#'>YES</a> <a onclick='no(2)' href='#'>NO</a>"	}, 6000);
+		}
+		
+if(a==2){
+
+/*
+	So you know...
+    that sensation of helplessness
+    That feeling of being lost
+    That constant thought of usefulness.. and yet... feeling no despair at all.
+    That sensation of being dead while still breathing... every inhalation is a torture... A torture that not even you can't feel.
+    Ending up embracing every second of that tasteless bitterness, like a long time friend that should have gone a long time ago... 
+	A friend that should have died in THAT long gone moment...
+    You know what I mean right?*/
+
+setTimeout(function(){printgg("So you know...", 2000);
+}, 0000);
+setTimeout(function(){printgg("that sensation of being helpless... Alone in the bast void...", 3000);
+}, 3500+1000);
+setTimeout(function(){printgg("That constant thought of being useless... ", 3000);
+}, 7000+1000);
+setTimeout(function(){printgg("That sensation of being dead while still breathing... every inhalation, every breath is torture and pain...", 4000);
+}, 11500+1000);
+setTimeout(function(){printgg("And the only thing left to do is to embrace it... Hoping it will hurt less... Stronger and stronger to weight the frustration and anger...",4000);
+}, 17000+3000);
+setTimeout(function(){printgg("The sadness... Like a long time friend that should have DIED a long time ago...",2000);
+}, 22500+3000);
+setTimeout(function(){$( "#window" ).fadeIn( 700 ); document.getElementById("window").innerHTML = "You know what I mean right? <br> <a onclick='yes(3)' href='#'>YES</a> <a onclick='no(3)' href='#'>NO</a>"	; 
+}, 26000+3000);
+
+
+}		
+if(a==3){
+
+/*-Yes
+        I'm glad I can have someone that understands my pain...	*/
+setTimeout(function(){printgg("I'm glad I can have someone that understands my pain...", 2000);
+}, 0000); //<== + last^^ + 1500
+setTimeout(function(){printgg("Thanks for sharing this moment, " +name+ " ... I needed it", 2000);
+}, 3500);
+
+
+
+}
+
+			
+		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function printg(a){
+	  $( "#window" ).fadeOut( 0 );
+	  $( "#window" ).fadeIn( 2000 );
+document.getElementById("window").innerHTML = a;	
+	  $( "#window" ).fadeOut( 1000 );
+}
+function print(a){
+	  $( "#window" ).fadeOut( 0 );
+	  $( "#window" ).fadeIn( 2000 );
+document.getElementById("window").innerHTML = a;
+}
+
+function printgg(a,b){
+	  $( "#window" ).fadeOut( 0 );
+	  $( "#window" ).fadeIn( 800 );
+document.getElementById("window").innerHTML = a;
+$( "#window" ).delay( b );
+	  $( "#window" ).fadeOut( 700 );
+}
+
+
+</script>
+</body>
+</html>

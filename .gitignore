@@ -45,3 +45,15 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+*.pek
+*.cfa
+*.au
+*.aup
+*.prproj
+*.psd
+*.mov
+
+#Files
+*/VHS Glitch - Free.mp4

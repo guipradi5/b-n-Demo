@@ -1,0 +1,758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<title>Blank(null){1}</title>
+ <meta name="application-name" content="blank (null)">
+  <link rel="shortcut icon" href="img/logo.png">
+ <meta name="description" content="Webcomic by Gill Pradas with glitch thematic, made with HTML5, the comic takes the viewer and player in a journey to help G.bio, a program, to find out more about her existance inside the Nulwo 2.0 computer.">
+<meta name="keywords" content="webcomic, glitch, command prompt, windows 95, apple II, retro, 8-bit, videogames, computing, informatic, programming, multimedia">
+<meta name="author" content="Guillermo 'Gill' Pradas">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71613906-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style>
+
+@font-face{
+font-family:DOS;
+src:url(fonts/DOS.ttf);
+}
+
+
+.buttons-container, .non-admin-buttons-container{
+    visibility:hidden;
+}
+
+iframe{
+    visibility:hidden;
+}
+body{
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background-color: #101010;
+	font-weight:bold;
+	color:white;
+	text-align:center;
+	font-size:13pt;
+
+}
+
+
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background-color: black;
+    border-left: 0px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+nav{
+        
+    position:absolute;
+    top:0;
+    width:100%;
+    height:10%;
+    background-color:white;
+    
+}
+
+nav ul{
+position:absolute;
+    right:30px;
+    
+}
+
+
+
+nav li{
+    position:relative;
+    line-height:300%;
+    display:inline-block;
+	
+    
+    
+}
+
+nav li a{
+    color:grey;
+	text-decoration:none;  
+	padding:46px;
+	font-size:13pt;
+
+}
+
+nav li a:hover{
+    color:white;
+	text-decoration:none;    
+	background-color:black;
+
+}
+
+
+#panel{
+    position:relative;
+background-color:white;
+color:black;
+heigth:70%;
+width:70%;
+padding:20px;
+margin-top:200px;
+left:15%;
+right:15%;
+}
+
+#next{
+    
+    margin-top: 20Px;
+}
+
+#input{
+    color:white;
+}
+
+.advise{
+position:absolute;
+background-color:white;
+color:black;
+width:70%;
+padding:20px;
+background-color:rgba(254,254,254,0.8);
+left:15%;
+right:15%;
+color:rgba(0,0,0,0.8);
+border:3px solid blue;
+}
+
+
+
+
+.text{
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background:none;
+	border:hidden;
+	outline-style: none;
+	font-size:13pt;
+	float:left;
+	text-align:left;
+	margin-left:20px;
+	font-weight:normal;
+	width:90%;
+	
+}
+
+
+
+
+.text .command{
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background:none;
+	border:hidden;
+	outline-style: none;
+	font-size:13pt;
+
+}
+
+
+.text .blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+    background:none;
+    border:hidden;
+    outline-style: none;
+    font-size:13pt;
+    width:70%;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+
+
+.text .blink_me:focus {
+    -webkit-animation-name: blinkerh;
+    -webkit-animation-duration: 0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+
+    -moz-animation-name: blinkerh;
+    -moz-animation-duration: 0s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+
+    animation-name: blinkerh;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+	
+
+}
+
+@-moz-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+#counter{
+position:absolute;
+float:left;
+top:5px;
+
+	
+}
+
+</style>
+
+<style id="placeholder-style">
+input:-moz-placeholder {color:  ;} 
+input::-webkit-input-placeholder {color: ;}
+</style>
+
+
+
+<script>
+var delay; // delay = setTimeout(function(){  }, 3000);
+
+   var step = 0;
+   var DOWN = 3000;
+function scrollbottom() {
+    var elmnt = document.getElementById("body");
+    elmnt.scrollTop = DOWN;
+    DOWN=DOWN+2000;
+}
+   
+   
+   
+   
+   function stop(a){
+       if(a==0){
+           
+       document.getElementById("command").style.opacity = 0;
+       document.getElementById("input").value = "";
+        }
+       if(a==1){
+          document.getElementById("command").style.opacity = 1;
+          
+          
+
+       }
+   }
+   
+   
+   
+ function space(){
+    lines(" ");
+ }
+ 
+ 
+</script>
+
+
+
+
+
+<script>
+function lines(a){
+var br = document.createElement("br");
+var line = document.getElementById("demo");
+var p = document.createElement("div");  
+var node = document.createTextNode(a);
+p.appendChild(node);
+line.appendChild(p);
+var element = document.getElementById("code");
+element.appendChild(line);
+}    
+
+function images(a, b){
+
+
+
+var line = document.getElementById("demo");
+var div = document.createElement("div");  
+var img = document.createElement("img");
+var br = document.createElement("br");
+img.setAttribute("src", a);
+img.setAttribute("style", "height:auto; width:70%;")
+var node = document.createTextNode(b);
+div.appendChild(node);
+div.appendChild(br);
+div.appendChild(img);
+line.appendChild(div);
+var element = document.getElementById("code");
+element.appendChild(line);
+
+}  
+
+
+function winimage(a,b){
+var myWindow = window.open("", b);
+myWindow.document.write("<img src)=".a.">");
+
+}
+
+
+</script>
+
+
+
+<script>
+
+jQuery(document).ready(function( $ ) {
+        $('.counter').counterUp({
+            delay: 5,
+            time: 12000
+        });
+    });    
+</script>
+
+</head>
+
+<body>
+
+<div id="counter"><span class="counter">2648</span> MB READY.</div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+
+<audio style="opacity:0; position:absolute;top:0;left:0; z-index:-9999;" autoplay >
+  <source src="http://jeamfry.com/blank_null/audio/startup.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+<div style="visibility:hidden" id="panel">Hi... my name is...<br><br> G╣=╩</div>
+
+<script>
+    $( document ).ready(function() {
+  document.getElementById("norman").style.opacity = 0;
+  $( "div.advise" ).fadeIn( 1200 );
+  delay = setTimeout(function(){ document.getElementById("advise").innerHTML = "LOADING... Please Wait"; }, 3000);
+  delay = setTimeout(function(){ document.getElementById("advise").innerHTML = "7▓896720920811?▒s45905"; }, 4000);
+    delay = setTimeout(function(){ document.getElementById("advise").innerHTML = "LOADING... Please Wait"; }, 4500);
+  $( "div.advise" ).delay( 12000 ).fadeOut( 1200 );
+  delay = setTimeout(function(){ document.getElementById("norman").style.opacity = 1 }, 19300);
+  $( "#input" ).delay( 19301 ).focus();
+ 
+});
+</script>
+
+
+<div class="advise"><div id="advise">Press F11 for a better experience (exit using F11 again)</div></div>
+
+<script>
+    $( document ).ready(function() {
+        
+        var colour = localStorage.getItem("color");
+      $("body").css("color", colour);
+       $("#input").css("color", colour);
+       
+       
+    document.getElementById("text1").style.display = "none"; 
+    document.getElementById("text2").style.display = "none";
+    document.getElementById("text3").style.display = "none"; 
+    delay = setTimeout(function(){ document.getElementById("counter").style.visibility = "hidden" }, 15000);
+    
+    delay = setTimeout(function(){ document.getElementById("text1").style.display = "inherit" }, 15000);
+    delay = setTimeout(function(){ document.getElementById("text2").style.display = "inherit" }, 16000);
+    delay = setTimeout(function(){ document.getElementById("text3").style.display = "inherit" }, 19300);
+    });
+</script>
+
+
+
+
+
+ 
+
+
+   <script src="js/jquery.hotkeys.js"></script>
+   
+   
+   
+<script>
+
+var aa=0;
+var mem = [];
+
+
+        $(document).ready(function(){
+            $('#input').bind('keydown.up', function(){if(aa>0){aa=aa-1; var iinp=mem[aa]; document.getElementById("input").value = iinp;} })
+			$('#input').bind('keydown.up', function(){if(document.getElementById("input").value=="undefined"){document.getElementById("input").value = "";}; })
+                $('#input').bind('keydown.down', function(){if(aa<=mem.length){aa=aa+1; var iinp=mem[aa]; document.getElementById("input").value = iinp;}if(aa<=0){aa=1;}; })
+				$('#input').bind('keydown.down', function(){if(document.getElementById("input").value=="undefined"){document.getElementById("input").value = "";}; })
+				 $('#input').bind('keydown.return', function(){if(aa==0){var inp=document.getElementById("input").value;  mem.push(inp);aa=mem.length;}else{aa=mem.length; var inp=document.getElementById("input").value;  mem.push(inp); aa=mem.length;}});
+				 
+
+
+	
+	$('#input').bind('keydown.return', function(){
+	var x=document.getElementById("input").value;
+	
+	
+if (x=="start" || x=="START")
+  {
+   stop(0);
+      lines("Program is already started");
+     stop(1); 
+scrollbottom();
+  }
+  
+if (x=="help" || x=="HELP"){
+    stop(0);
+space();
+lines("Public commands:");
+lines("/log ==> gives a report on the last commands used by admin");
+lines("/open 'file' ==> open a document. The program finds the file name in the memory and tries to open it in the default protocol");
+lines("/debug 'file' ==> opens a file without stoping on errors");
+space();
+lines("////////Notes: Users can copy and paste text as in a 'word' document");
+lines("////////////// You can change the text color by inputing a color name or a HEX value");
+  stop(1);
+    scrollbottom();
+
+  }
+  
+
+
+  //'7▓896720.jðc', '920811.╩tc', '?▒s45905.j'
+
+if (x=="log" || x=="LOG"){
+     stop(0);
+    space();
+    lines("OPENING LAST LOG:");
+    lines(" ");
+    lines("/open 'key.jpg', 'experiment1.jpg', 'experiment2.jpg'");
+    lines("opening...");
+    lines("[ERROR REPORT]");
+    lines(" ");
+    lines("selected files opened with errors");
+
+      stop(1);
+    scrollbottom();
+      
+   
+}
+
+if (x=="open 'key.jpg', 'experiment1.jpg', 'experiment2.jpg'"|| x=="open experiment1.jpg" || x=="open 'experiment1.jpg'" || x=="open 'experiment2.jpg'" || x=="open experiment2.jpg" || x=="open 'experiment1.jpg', 'experiment2.jpg'" || x=="open 'key.jpg'" || x=="open key.jpg"){
+     var com = x.replace(/open /gi, "");
+	 stop(0);
+    space();
+    lines("opening...");
+    delay = setTimeout(function(){ lines("[ERROR REPORT]");
+    lines(" ");
+    lines("selected file(s) opened with errors");
+    lines(" ");
+    lines("Try: /debug '"+ com +"'");
+     stop(1);
+	     scrollbottom();}, 3000);
+
+}
+
+if(x=="debug 'experiment1.jpg', 'experiment2.jpg'" || x=="debug 'experiment1.jpg'" || x=="debug experiment1.jpg" || x=="debug 'experiment2.jpg'" || x=="debug experiment2.jpg" || x=="debug experiment1.jpg, experiment2.jpg"){
+    stop(0);
+    space();
+    lines("file could not open despite using debug");
+	lines("file is impossible to open");
+	lines("Try another file");
+    stop(1);
+    scrollbottom();
+}
+
+
+if(x=="debug 'key.jpg'" || x=="debug key.jpg"){
+    stop(0);
+    space();
+    winimage("img/1.gif", "'key.jpg'");
+    stop(1);
+    scrollbottom();
+}
+
+
+if(x=="debug 'key.jpg', 'experiment1.jpg', 'experiment2.jpg'"){
+    stop(0);
+    space();
+    lines("'experiment1.jpg' AND 'experiment2.jpg' Could not open despite using the debug commang");
+    images("img/1.gif", "'key.jpg'");
+    stop(1);
+    scrollbottom();
+}
+
+ if (x=="open g.bio" || x=="open G.bio" || x=="debug g.bio" || x=="debug G.bio" || x=="run G.bio" || x=="run g.bio" || x=="open 'g.bio'" || x=="open 'G.bio'" || x=="debug 'g.bio'" || x=="debug 'G.bio'" || x=="run 'G.bio'" || x=="run 'g.bio'"){
+    stop(0); 
+	space();
+    lines("Opening 'G.bio' with 'Nul-World.exe'");
+    lines("");
+    delay = setTimeout(function(){ lines("Executed G.bio successfully!");
+    lines("Encountered an iteration in RAM, executing...")}, 3000);
+    scrollbottom();
+	delay = setTimeout(function(){ lines("Transmitted running iteration succesfully!");
+    lines("Please type in '/run Nul-World.exe' to display your 'G.bio'");
+    stop(1);
+	scrollbottom();}, 6000);
+
+    
+
+  }
+  
+  
+  if (x=="run Nul-World.exe" || x=="run nul-world.exe" || x=="run NUL-WORLD.EXE"){
+stop(0);  
+space();
+lines("Running...");
+delay = setTimeout(function(){ window.location = 'http://jeamfry.com/blank_null/2.html'; scrollbottom();}, 1000);
+	
+    
+
+  }
+ 
+if (x=="exit"){
+	window.location = 'blank-null.tumblr.com';
+	return false;
+}
+	
+	
+	
+		});
+  
+            
+           
+        });
+
+        
+    </script>   
+    
+   <script>
+   var colorines = [
+  "black", 	"#000000",	
+"navy" , "#000080"	 	,
+"darkblue" ,	 "#00008b"	, 
+"mediumblue" ,	 "#0000cd"	, 	 
+"blue" ,	 "#0000ff"	 	, 
+"darkgreen" ,	 "#006400"	 ,	 
+"green", 	 "#008000" 	 ,
+"teal", 	 "#008080"	 ,	 
+"darkcyan" ,	 "#008b8b",	 	 
+"deepskyblue", "#00bfff"	, 	 
+"darkturquoise", "#00ced1"	 ,	 
+"mediumspringgreen", "#00fa9a",	 	 
+"lime", "#00ff00",
+"springgreen", "#00ff7f"	 	 ,
+"aqua", "#00ffff"	 	 ,
+"cyan", "#00ffff"	 	 ,
+"midnightblue", "#191970",	 	 
+"dodgerblue", "#1e90ff"	 ,	 
+"lightseagreen", "#20b2aa",	 	 
+"forestgreen", "#228b22"	, 	 
+"seagreen", "#2e8b57"	 	 ,
+"darkslategray", "#2f4f4f"	 ,	 
+"limegreen", "#32cd32"	 	 ,
+"mediumseagreen", "#3cb371"	 ,	 
+"turquoise", "#40e0d0"	 	 ,
+"royalblue", "#4169e1"	 	 ,
+"steelblue", "#4682b4"	 	 ,
+"darkslateblue", "#483d8b"	 ,	 
+"mediumturquoise", "#48d1cc"	, 	 
+"indigo ", "#4b0082"	 	 ,
+"darkolivegreen", "#556b2f"	 ,	 
+"cadetblue", "#5f9ea0"	 	 ,
+"cornflowerblue", "#6495ed"	 ,	 
+"rebeccapurple", "#663399"	 ,	 
+"mediumaquamarine", "#66cdaa",	 	 
+"dimgray", "#696969" 	 ,
+"slateblue", "#6a5acd"	 ,	 
+"olivedrab", "#6b8e23"	 ,	 
+"slategray", "#708090"	 ,	 
+"lightslategray", "#778899"	 	 ,
+"mediumslateblue", "#7b68ee"	 ,	 
+"lawngreen", "#7cfc00"	 	 ,
+"chartreuse", "#7fff00"	 	 ,
+"aquamarine", "#7fffd4"	 	 ,
+"maroon", "#800000"	 	 ,
+"purple", "#800080"	 	 ,
+"olive", "#808000"	 	 ,
+"gray", "#808080"	 	 ,
+"skyblue", "#87ceeb"	 ,	 
+"lightskyblue", "#87cefa",	 	 
+"blueviolet", "#8a2be2"	 ,	 
+"darkred", "#8b0000"	 ,	 
+"darkmagenta", "#8b008b"	, 	 
+"saddlebrown", "#8b4513"	 ,	 
+"darkseagreen", "#8fbc8f"	 ,	 
+"lightgreen", "#90ee90"	 	 ,
+"mediumpurple", "#9370db"	 ,	 
+"darkviolet", "#9400d3"	 	 ,
+"palegreen", "#98fb98"	 	 ,
+"darkorchid", "#9932cc"	 	 ,
+"yellowgreen", "#9acd32"	 ,	 
+"sienna", "#a0522d"	 	 ,
+"brown", "#a52a2a"	 	 ,
+"darkgray", "#a9a9a9"	 ,	 
+"lightblue", "#add8e6"	 ,	 
+"greenyellow", "#adff2f"	, 	 
+"paleturquoise", "#afeeee"	 ,	 
+"lightsteelblue", "#b0c4de"	 ,	 
+"powderblue", "#b0e0e6"	 	 ,
+"firebrick", "#b22222"	 	 ,
+"darkgoldenrod", "#b8860b"	 ,	 
+"mediumorchid", "#ba55d3"	 ,	 
+"rosybrown", "#bc8f8f"	 	 ,
+"darkkhaki", "#bdb76b"	 	 ,
+"silver", "#c0c0c0"	 	 ,
+"mediumvioletred", "#c71585"	, 	 
+"indianred ", "#cd5c5c"	 	, 
+"peru", "#cd853f"	 	 ,
+"chocolate", "#d2691e"	 ,	 
+"tan", "#d2b48c"	 	 ,
+"lightgray", "#d3d3d3"	 ,	 
+"thistle", "#d8bfd8"	 ,	 
+"orchid", "#da70d6"	 	 ,
+"goldenrod", "#daa520"	 ,	 
+"palevioletred", "#db7093",	 	 
+"crimson", "#dc143c"	 	, 
+"gainsboro", "#dcdcdc"	 	 ,
+"plum", "#dda0dd"	 	 ,
+"burlywood", "#deb887"	 ,	 
+"lightcyan", "#e0ffff"	 ,	 
+"lavender", "#e6e6fa"	 ,	 
+"darksalmon", "#e9967a"	 ,	 
+"violet", "#ee82ee"	 	 ,
+"palegoldenrod", "#eee8aa",	 	 
+"lightcoral", "#f08080"	 	, 
+"khaki", "#f0e68c"	 	 ,
+"aliceblue", "#f0f8ff"	 ,	 
+"honeydew", "#f0fff0"	 ,	 
+"azure", "#f0ffff"	 	 ,
+"sandybrown", "#f4a460"	 ,	 
+"wheat", "#f5deb3"	 	 ,
+"beige", "#f5f5dc"	 	 ,
+"whitesmoke", "#f5f5f5"	 ,	 
+"mintcream", "#f5fffa"	 ,	 
+"ghostwhite", "#f8f8ff"	 ,	 
+"salmon", "#fa8072"	 	 ,
+"antiquewhite", "#faebd7",	 	 
+"linen", "#faf0e6"	 	 ,
+"lightgoldenrodyellow", "#fafad2"	 	, 
+"oldlace", "#fdf5e6"	 	 ,
+"red", "#ff0000"	 	 ,
+"fuchsia", "#ff00ff"	 ,	 
+"magenta", "#ff00ff"	 ,	 
+"deeppink", "#ff1493"	 ,	 
+"orangered", "#ff4500"	 ,	 
+"tomato", "#ff6347"	 	 ,
+"hotpink", "#ff69b4"	 ,	 
+"coral", "#ff7f50"	 	 ,
+"darkorange", "#ff8c00"	 ,	 
+"lightsalmon", "#ffa07a"	, 	 
+"orange", "#ffa500"	 	 ,
+"lightpink", "#ffb6c1"	 ,	 
+"pink", "#ffc0cb"	 	 ,
+"gold", "#ffd700"	 	 ,
+"peachpuff", "#ffdab9"	 ,	 
+"navajowhite", "#ffdead"	, 	 
+"moccasin", "#ffe4b5"	 	 ,
+"bisque", "#ffe4c4"	 	 ,
+"mistyrose", "#ffe4e1"	 ,	 
+"blanchedalmond", "#ffebcd"	 	, 
+"papayawhip", "#ffefd5"	 	, 
+"lavenderblush", "#fff0f5"	 	 ,
+"seashell", "#fff5ee"	 	 ,
+"cornsilk", "#fff8dc"	 	 ,
+"lemonchiffon", "#fffacd"	 ,	 
+"floralwhite", "#fffaf0"	 ,	 
+"snow", "#fffafa"	 	 ,
+"yellow", "#ffff00"	 	 ,
+"lightyellow", "#ffffe0"	, 	 
+"ivory", "#fffff0"	 	 ,
+"white", "#ffffff"];
+   
+$( "#norman" ).submit(function( ) {
+	var ranColor = $("#input").val();
+	var randomColor = ranColor.toLowerCase();
+	for(var i=0; i<=colorines.length;i++){
+		if(randomColor == colorines[i]){
+     
+   
+      $("body").css("color", $( "#input" ).val());
+       $("#input").css("color", $("#input").val());
+       
+        localStorage.setItem("color", randomColor);
+  /*      // generate new styles and append to the placeholder style block
+        var styleContent = 'input:-moz-placeholder {color: ' + randomColor + ';} input::-webkit-input-placeholder {color: ' + randomColor + ';}'
+        $('#placeholder-style').text(styleContent);*/
+		 }
+		 }
+        $( "input" ).val( "" );
+        
+       
+        
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        $("#input").focus();
+		
+    return;
+  event.preventDefault();
+	
+});
+</script>
+
+
+
+</body>
+</html>

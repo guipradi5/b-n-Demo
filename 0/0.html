@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<title>Startup App v.0.2.3</title>
+ <meta name="application-name" content="blank (null)">
+  <link rel="shortcut icon" href="img/logo.png">
+ <meta name="description" content="Webcomic by Gill Pradas with glitch thematic, made with HTML5, the comic takes the viewer and player in a journey to help G.bio, a program, to find out more about her existance inside the Nulwo 2.0 computer.">
+<meta name="keywords" content="webcomic, glitch, command prompt, windows 95, apple II, retro, 8-bit, videogames, computing, informatic, programming, multimedia">
+<meta name="author" content="Guillermo 'Gill' Pradas">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71613906-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style>
+
+@font-face{
+font-family:DOS;
+src:url(fonts/DOS.ttf);
+}
+
+
+.buttons-container, .non-admin-buttons-container{
+    visibility:hidden;
+}
+
+iframe{
+    visibility:hidden;
+}
+body{
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background-color: #101010;
+	font-weight:bold;
+	color:white;
+	text-align:center;
+	font-size:13pt;
+
+}
+
+#code{
+text-align:left;
+
+}
+
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background-color: black;
+    border-left: 0px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+
+#myProgress {
+    position: relative;
+	left:0;
+    width: 99.5%;
+    height: 30px;
+    background-color: #101010;
+	border: 3px solid white;
+}
+#progress {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: white;
+}
+#label {
+position:absolute;
+    text-align: center; /* If you want to center it */
+	margin-left:50%;
+    line-height: 30px; /* Set the line-height to the same as the height of the progress bar container, to center it vertically */
+    color: white;
+}
+
+</style>
+
+
+
+<script>
+var delay; // delay = setTimeout(function(){  }, 3000);
+
+   var step = 0;
+   var DOWN = 3000;
+   
+   
+function scrollbottom() {
+    var elmnt = document.getElementById("body");
+    elmnt.scrollTop = DOWN;
+    DOWN=DOWN+2000;
+}
+   
+
+function lines(a){
+var br = document.createElement("br");
+var line = document.getElementById("demo");
+var p = document.createElement("div");  
+var node = document.createTextNode(a);
+p.appendChild(node);
+var element = document.getElementById("code");
+element.appendChild(p);
+}    
+
+function images(a, b){
+var line = document.getElementById("demo");
+var div = document.createElement("div");  
+var img = document.createElement("img");
+var br = document.createElement("br");
+img.setAttribute("src", a);
+img.setAttribute("style", "height:auto; width:70%;")
+var node = document.createTextNode(b);
+div.appendChild(node);
+div.appendChild(br);
+div.appendChild(img);
+line.appendChild(div);
+var element = document.getElementById("code");
+element.appendChild(line);
+}  
+
+
+function winimage(a,b){
+var myWindow = window.open("", b, "width=800, height=600");
+myWindow.document.write("<img src='" + a +"'>");
+}
+
+</script>
+</head>
+
+<body>
+
+
+<div id="myProgress">
+    <div id="progress"></div>
+	<div id="label">0%</div>
+</div>
+<br>
+<script>
+move();
+function move() {
+    var elem = document.getElementById("progress"); 
+    var width = 0;
+    var id = setInterval(frame, 100);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+			lines("Connecting to server...");
+			lines("Please wait...");
+			setTimeout(
+			function(){ lines("Connected to server.")
+						lines("Looking for 'C79x93:/Nulworld/0x00345/hsdj77399djDjk34839/_ffjjksi88370/init/bin/SCNW.exe'");}, 
+						2000);
+			setTimeout(
+			function(){ lines("Found location.")
+						lines("Message from C79x93: 'Please enter password...'");}, 
+						5000);
+			setTimeout(
+			function(){ lines("got APT:A lock handle ?")
+						lines("00000000, 00028004, 00030005");},
+						8000);
+			setTimeout(
+			function(){ lines("got handle ?")
+						lines("fs:USER")
+						lines("000400006");},
+						9000);	
+			setTimeout(
+			function(){ lines("got handle ?")
+						lines("ns:s")
+						lines("006e8007");},
+						9500);
+			setTimeout(
+			function(){ lines("got handle ?")
+						lines("ir:rst")
+						lines("005c0005");},
+						9600);
+			setTimeout(
+			function(){ lines("got handle ?")
+						lines("ir:rst")
+						lines("005c0006");},
+						9700);
+			setTimeout(
+			function(){ lines("got handle ?")
+						lines("am:sys")
+						lines("00c70003");},
+						9700);		
+			setTimeout(
+			function(){ lines("got handle ?")
+						lines("sm:t")
+						lines("00a87006")
+						lines("got handle ?")
+						lines("rt:sd")
+						lines("0c876c03");},
+						9800);
+			setTimeout(
+			function(){ lines("hack into server succesfull")
+						lines("Message from C79x93: 'Password correct. Executing SCNW.exe'");},
+						10000);
+			setTimeout(
+			function(){ lines("Porting execution to browser")
+						lines("Redirecting...");},
+						11000);
+			setTimeout(
+			function(){   window.location.assign("http://jeamfry.com/blank_null/1.html");},
+						13000);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            document.getElementById("label").innerHTML = width * 1 + '%';
+			if(width>=51)
+			document.getElementById("label").style.color = "black";
+        }
+    }
+}
+</script>
+
+<div id="code">
+</div>
+
+
+
+<style>
+
+
+</style>
+
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<title>Page 1</title>
+
+<style>
+
+body{
+	font-family:'Lucida Console', Monaco, monospace;
+	background-color: black;
+	font-weight:bold;
+	color:white;
+	text-align:center;
+	font-size:12pt;
+
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background-color: black;
+    border-left: 0px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+
+nav{
+        
+    color:black;
+    position:absolute;
+    top:0;
+    width:100%;
+    height:10%;
+    background-color:white;
+    
+}
+
+nav ul{
+position:absolute;
+    right:30px;
+    
+}
+
+
+
+nav li{
+    position:relative;
+    line-height:300%;
+    display:inline-block;
+	
+    
+    
+}
+
+nav li a{
+    color:grey;
+	text-decoration:none;  
+	padding:46px;
+	font-size:14pt;
+
+}
+
+nav li a:hover{
+    color:white;
+	text-decoration:none;    
+	background-color:black;
+
+}
+
+
+#panel{
+    position:relative;
+background-color:white;
+color:black;
+heigth:70%;
+width:70%;
+padding:20px;
+margin-top:200px;
+left:15%;
+right:15%;
+}
+
+#next{
+    
+    margin-top: 20Px;
+}
+
+
+.advise{
+position:relative;
+background-color:white;
+color:black;
+width:70%;
+padding:20px;
+background-color:rgba(254,254,254,0.8);
+left:15%;
+right:15%;
+color:rgba(0,0,0,0.8);
+border-radius:50px;
+}
+
+
+
+
+.text{
+	font-family:'Lucida Console', Monaco, monospace;
+	background:none;
+	border:hidden;
+	color:#FFF;
+	outline-style: none;
+	font-size:15px;
+	float:left;
+	text-align:left;
+	margin-left:20px;
+	font-weight:normal;
+	width:90%;
+	
+}
+
+
+.text .textwait{
+	-webkit-animation-name: wait;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+
+    -moz-animation-name: wait;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+
+    animation-name: wait;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	background:none;
+	border:hidden;
+	color:#FFF;
+	outline-style: none;
+}
+
+@-moz-keyframes wait {  
+    0% { visibility:hidden; display:none; }
+    95% { visibility:hidden; display:none; }
+    100% { ovisibility:visible; display:inherit; }
+}
+
+@-webkit-keyframes wait {  
+    0% { visibility:hidden; display:none; }
+    95% { visibility:hidden; display:none; }
+    100% { ovisibility:visible; display:inherit; }
+}
+
+@keyframes wait {  
+    0% { visibility:hidden; display:none; }
+    95% { visibility:hidden; display:none; }
+    100% { ovisibility:visible; display:inherit; }
+}
+
+.text .textwait2{
+	-webkit-animation-name: wait2;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+
+    -moz-animation-name: wait2;
+    -moz-animation-duration: 2s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+
+    animation-name: wait2;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	background:none;
+	border:hidden;
+	color:#FFF;
+	outline-style: none;
+}
+
+@-moz-keyframes wait2 {  
+    0% { visibility:hidden; display:none; }
+    97% { visibility:hidden; display:none; }
+    100% { ovisibility:visible; display:inherit; }
+}
+
+@-webkit-keyframes wait2 {  
+    0% { visibility:hidden; display:none; }
+    97% { visibility:hidden; display:none; }
+    100% { ovisibility:visible; display:inherit; }
+}
+
+@keyframes wait2 {  
+    0% { visibility:hidden; display:none; }
+    97% { visibility:hidden; display:none; }
+    100% { ovisibility:visible; display:inherit; }
+}
+
+.text .textwait3{
+	-webkit-animation-name: wait3;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+
+    -moz-animation-name: wait3;
+    -moz-animation-duration: 5s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+
+    animation-name: wait3;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	background:none;
+	border:hidden;
+	color:#FFF;
+	outline-style: none;
+}
+
+@-moz-keyframes wait3 {  
+    0% { visibility:hidden; display:none; }
+    99% { visibility:hidden; display:none; }
+    100% { ovisibility:visible; display:inherit; }
+}
+
+@-webkit-keyframes wait3 {  
+    0% { visibility:hidden; display:none; }
+    99% { visibility:hidden; display:none; }
+    100% { ovisibility:visible; display:inherit; }
+}
+
+@keyframes wait3 {  
+    0% { visibility:hidden; display:none; }
+    99% { visibility:hidden; display:none; }
+    100% { ovisibility:visible; display:inherit; }
+}
+
+
+.text .command{
+	font-family:'Lucida Console', Monaco, monospace;
+	background:none;
+	border:hidden;
+	color:#FFF;
+	outline-style: none;
+	font-size:15px;
+	-webkit-animation-name: wait3;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-name: wait3;
+	-moz-animation-duration: 5s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: 1;
+	animation-name: wait3;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+}
+
+
+.text .blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    font-family:'Lucida Console', Monaco, monospace;
+    background:none;
+    border:hidden;
+    color:#FFF;
+    outline-style: none;
+    font-size:15px;
+    width:70%;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+
+.text .blink_me:focus {
+    -webkit-animation-name: blinkerh;
+    -webkit-animation-duration: 0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+
+    -moz-animation-name: blinkerh;
+    -moz-animation-duration: 0s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+
+    animation-name: blinkerh;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	background:none;
+	border:hidden;
+	color:#FFF;
+	outline-style: none;
+}
+
+@-moz-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+
+</style>
+
+<script>
+var delay; // delay = setTimeout(function(){  }, 3000);
+
+   var step = 0;
+   var DOWN = 3000
+function scrollbottom() {
+    var elmnt = document.getElementById("body");
+    elmnt.scrollTop = DOWN;
+    DOWN=DOWN+2000;
+}
+   
+function memory(){
+   
+var x=document.getElementById("input").value;
+var flag1 = 0;
+var flag2 = 0;
+var flag3 = 0;
+var flag4 = 0;
+var flag5 = 0;
+var flag6 = 0;
+var flag7 = 0;
+var flag8 = 0;
+var flag9 = 0;
+
+if (x=="start" || x=="START")
+  {
+   stop(0);
+      lines("Program is already started");
+     stop(1); 
+scrollbottom();
+  }
+  
+if (x=="help" || x=="HELP"){
+    stop(0);
+lines("Public commands:");
+lines("/log ==> gives a report on the last commands used by admin");
+lines("/open 'file' ==> open a document. The program finds the file name in the memory and tries to open it in the default protocol");
+lines("/debug execution 'file' ==> opens a file without stoping on errors");
+
+  stop(1);
+    scrollbottom();
+
+  }
+  
+  
+
+  
+
+if (x=="log" || x=="LOG"){
+      stop(0);
+    lines("OPENING LAST LOG:");
+    lines(" ");
+    lines("/open '920811.╩tc', '?▒s45905.j', '7▓896720.jðc'");
+    lines("opening...");
+    lines("[ERROR REPORT]");
+    lines(" ");
+    lines("selected files opened with errors");
+      stop(1);
+    scrollbottom();
+      
+   
+}
+
+if (x=="open '920811.╩tc', '?▒s45905.j', '7▓896720.jðc'"|| x=="open 920811.╩tc" || x=="open '920811.╩tc'" || x=="open '?▒s45905.j'" || x=="open ?▒s45905.j" || x=="open '920811.╩tc', '?▒s45905.j'" || x=="open '7▓896720.jðc'" || x=="open 7▓896720.jðc"){
+     stop(0);
+    lines("opening...");
+    delay = setTimeout(function(){ lines("[ERROR REPORT]");
+    lines(" ");
+    lines("selected file(s) opened with errors");
+     stop(1)}, 3000);
+    scrollbottom();
+}
+
+if(x=="debug_execution '920811.╩tc', '?▒s45905.j'" || x=="debug_execution '920811.╩tc'" || x=="debug_execution 920811.╩tc" || x=="debug_execution '?▒s45905.j'" || x=="debug_execution ?▒s45905.j" || x=="debug_execution '?▒s45905.j', '920811.╩tc'"){
+    stop(0);
+    lines("file could not open despite using debug_execution");
+    stop(1);
+    scrollbottom();
+}
+
+
+if(x=="debug_execution '7▓896720.jðc'" || x=="debug_execution 7▓896720.jðc"){
+    stop(0);
+    images("http://i.imgur.com/rchhuxD.png", "'7▓896720.jðc'");
+    stop(1);
+    scrollbottom();
+}
+
+
+if(x=="debug_execution '920811.╩tc', '?▒s45905.j', '7▓896720.jðc'"){
+    stop(0);
+    lines("'920811.╩tc' AND '?▒s45905.j' Could not open despite using debug_execution");
+    images("http://i.imgur.com/rchhuxD.png", "'7▓896720.jðc'");
+    stop(1);
+    scrollbottom();
+}
+
+ if (x=="open g.bio" || x=="open G.bio" || x=="debug_execution g.bio" || x=="debug_execution G.bio" || x=="run G.bio" || x=="run g.bio"){
+    stop(0); 
+    lines("Opening 'G.bio' with 'Nul-World.exe'");
+    lines("");
+    delay = setTimeout(function(){ lines("Executed G.bio successfully!");
+    lines("Encountered an iteration in RAM, executing...")}, 3000);
+    delay = setTimeout(function(){ lines("Transmitted running iteration succesfully!");
+    lines("Please type in '/run Nul-World.exe' to display your 'G.bio'");
+    stop(1)}, 6000);
+
+    scrollbottom();
+
+  }
+  
+  
+  if (x=="run Nul-World.exe" || x=="run nul-world.exe" || x=="run NUL-WORLD.EXE"){
+stop(0);  
+lines("Running...");
+delay = setTimeout(function(){ window.location = 'blank-null.tumblr.com/2'; }, 1000);
+	
+    scrollbottom();
+
+  }
+ 
+if (x=="exit"){
+	window.location = 'blank-null.tumblr.com';
+	return false;
+}
+
+
+}
+
+   function stop(a){
+       if(a==0){
+       document.getElementById("command").style.visibility = "hidden";
+       document.getElementById("input").value = "";
+        }
+       if(a==1){
+          document.getElementById("command").style.visibility = "visible";
+       }
+   }
+   
+</script>
+
+
+
+
+<script>
+function lines(a){
+var br = document.createElement("br");
+var line = document.getElementById("demo");
+var p = document.createElement("p");  
+var node = document.createTextNode(a);
+p.appendChild(node);
+line.appendChild(p);
+var element = document.getElementById("code");
+element.appendChild(line);
+}    
+
+function images(a, b){
+var line = document.getElementById("demo");
+var div = document.createElement("div");  
+var img = document.createElement("img");
+var br = document.createElement("br");
+img.setAttribute("src", a);
+img.setAttribute("style", "height:auto; width:70%;")
+var node = document.createTextNode(b);
+div.appendChild(node);
+div.appendChild(br);
+div.appendChild(img);
+line.appendChild(div);
+var element = document.getElementById("code");
+element.appendChild(line);
+}  
+
+
+</script>
+
+</head>
+
+<body id="body">
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="text">
+<p class="textwait">Cannot access Nulwo-world.exe at the moment. </p>
+<p class="textwait2">"Nulwo Co.avi" is still not available. Wait until further instruction by admin.</p>
+<p class="textwait3"><a href="http://blank-null.tumblr.com">Go back to "HOME".</a></p>
+<div style=" margin-left:10px; text-align:left" id="code"></div>
+<p id="demo"> </p>
+<div class="command" id="command" style="visibility:visible;"></div>
+</div>
+</body>
+</html>

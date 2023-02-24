@@ -1,0 +1,537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<title>Page 1</title>
+ <meta name="application-name" content="blank (null)">
+ <meta name="description" content="Webcomic by Gill Pradas with glitch thematic, made with HTML5, the comic takes the viewer and player in a journey to help G.bio, a program, to find out more about her existance inside the Nulwo 2.0 computer.">
+<meta name="keywords" content="webcomic, glitch, command prompt, windows 95, apple II, retro, 8-bit, videogames, computing, informatic, programming, multimedia">
+<meta name="author" content="Guillermo 'Gill' Pradas">
+<style>
+
+.buttons-container, .non-admin-buttons-container{
+    visibility:hidden;
+}
+
+iframe{
+    visibility:hidden;
+}
+body{
+	font-family:'Lucida Console', Monaco, monospace;
+	background-color: black;
+	font-weight:bold;
+	color:white;
+	text-align:center;
+	font-size:12pt;
+
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background-color: black;
+    border-left: 0px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+nav{
+        
+    position:absolute;
+    top:0;
+    width:100%;
+    height:10%;
+    background-color:white;
+    
+}
+
+nav ul{
+position:absolute;
+    right:30px;
+    
+}
+
+
+
+nav li{
+    position:relative;
+    line-height:300%;
+    display:inline-block;
+	
+    
+    
+}
+
+nav li a{
+    color:grey;
+	text-decoration:none;  
+	padding:46px;
+	font-size:14pt;
+
+}
+
+nav li a:hover{
+    color:white;
+	text-decoration:none;    
+	background-color:black;
+
+}
+
+
+#panel{
+    position:relative;
+background-color:white;
+color:black;
+heigth:70%;
+width:70%;
+padding:20px;
+margin-top:200px;
+left:15%;
+right:15%;
+}
+
+#next{
+    
+    margin-top: 20Px;
+}
+
+#input{
+    color:white;
+}
+
+.advise{
+position:absolute;
+background-color:white;
+color:black;
+width:70%;
+padding:20px;
+background-color:rgba(254,254,254,0.8);
+left:15%;
+right:15%;
+color:rgba(0,0,0,0.8);
+border:3px solid blue;
+}
+
+
+
+
+.text{
+	font-family:'Lucida Console', Monaco, monospace;
+	background:none;
+	border:hidden;
+	outline-style: none;
+	font-size:15px;
+	float:left;
+	text-align:left;
+	margin-left:20px;
+	font-weight:normal;
+	width:90%;
+	
+}
+
+
+
+
+.text .command{
+	font-family:'Lucida Console', Monaco, monospace;
+	background:none;
+	border:hidden;
+	outline-style: none;
+	font-size:15px;
+
+}
+
+
+.text .blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    font-family:'Lucida Console', Monaco, monospace;
+    background:none;
+    border:hidden;
+    outline-style: none;
+    font-size:15px;
+    width:70%;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+
+
+.text .blink_me:focus {
+    -webkit-animation-name: blinkerh;
+    -webkit-animation-duration: 0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+
+    -moz-animation-name: blinkerh;
+    -moz-animation-duration: 0s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+
+    animation-name: blinkerh;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	background:none;
+	border:hidden;
+	outline-style: none;
+}
+
+@-moz-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+
+
+</style>
+
+<style id="placeholder-style">
+input:-moz-placeholder {color:  ;} 
+input::-webkit-input-placeholder {color: ;}
+</style>
+
+
+
+<script>
+var delay; // delay = setTimeout(function(){  }, 3000);
+
+   var step = 0;
+   var DOWN = 3000;
+function scrollbottom() {
+    var elmnt = document.getElementById("body");
+    elmnt.scrollTop = DOWN;
+    DOWN=DOWN+2000;
+}
+   
+function memory(){
+   
+var x=document.getElementById("input").value;
+var flag1 = 0;
+var flag2 = 0;
+var flag3 = 0;
+var flag4 = 0;
+var flag5 = 0;
+var flag6 = 0;
+var flag7 = 0;
+var flag8 = 0;
+var flag9 = 0;
+
+if (x=="start" || x=="START")
+  {
+   stop(0);
+      lines("Program is already started");
+     stop(1); 
+scrollbottom();
+  }
+  
+if (x=="help" || x=="HELP"){
+    stop(0);
+lines("Public commands:");
+lines("/log ==> gives a report on the last commands used by admin");
+lines("/open 'file' ==> open a document. The program finds the file name in the memory and tries to open it in the default protocol");
+lines("/debug execution 'file' ==> opens a file without stoping on errors");
+space();
+  stop(1);
+    scrollbottom();
+
+  }
+  
+  
+
+  
+
+if (x=="log" || x=="LOG"){
+     stop(0);
+    lines("OPENING LAST LOG:");
+    lines(" ");
+    lines("/open '920811.-tc', '?¦s45905.j', '7¦896720.jðc'");
+    lines("opening...");
+    lines("[ERROR REPORT]");
+    lines(" ");
+    lines("selected files opened with errors");
+    space();
+      stop(1);
+    scrollbottom();
+      
+   
+}
+
+if (x=="open '920811.-tc', '?¦s45905.j', '7¦896720.jðc'"|| x=="open 920811.-tc" || x=="open '920811.-tc'" || x=="open '?¦s45905.j'" || x=="open ?¦s45905.j" || x=="open '920811.-tc', '?¦s45905.j'" || x=="open '7¦896720.jðc'" || x=="open 7¦896720.jðc"){
+     stop(0);
+    lines("opening...");
+    delay = setTimeout(function(){ lines("[ERROR REPORT]");
+    lines(" ");
+    lines("selected file(s) opened with errors");
+    lines(" ");
+    lines("Try: /debug execution 'file'");
+    space();
+     stop(1)}, 3000);
+    scrollbottom();
+}
+
+if(x=="debug execution '920811.-tc', '?¦s45905.j'" || x=="debug execution '920811.-tc'" || x=="debug execution 920811.-tc" || x=="debug execution '?¦s45905.j'" || x=="debug execution ?¦s45905.j" || x=="debug execution '?¦s45905.j', '920811.-tc'"){
+    stop(0);
+    lines("file could not open despite using debug_execution");
+    space();
+    stop(1);
+    scrollbottom();
+}
+
+
+if(x=="debug execution '7¦896720.jðc'" || x=="debug execution 7¦896720.jðc"){
+    stop(0);
+    images("http://i.imgur.com/rchhuxD.png", "'7¦896720.jðc'");
+    space();
+    stop(1);
+    scrollbottom();
+}
+
+
+if(x=="debug execution '920811.-tc', '?¦s45905.j', '7¦896720.jðc'"){
+    stop(0);
+    lines("'920811.-tc' AND '?¦s45905.j' Could not open despite using debug_execution");
+    images("http://i.imgur.com/rchhuxD.png", "'7¦896720.jðc'");
+    space();
+    stop(1);
+    scrollbottom();
+}
+
+ if (x=="open g.bio" || x=="open G.bio" || x=="debug_execution g.bio" || x=="debug_execution G.bio" || x=="run G.bio" || x=="run g.bio" || x=="open 'g.bio'" || x=="open 'G.bio'" || x=="debug_execution 'g.bio'" || x=="debug_execution 'G.bio'" || x=="run 'G.bio'" || x=="run 'g.bio'"){
+    stop(0); 
+    lines("Opening 'G.bio' with 'Nul-World.exe'");
+    lines("");
+    delay = setTimeout(function(){ lines("Executed G.bio successfully!");
+    lines("Encountered an iteration in RAM, executing...")}, 3000);
+    delay = setTimeout(function(){ lines("Transmitted running iteration succesfully!");
+    lines("Please type in '/run Nul-World.exe' to display your 'G.bio'");
+    space();
+    stop(1)}, 6000);
+
+    scrollbottom();
+
+  }
+  
+  
+  if (x=="run Nul-World.exe" || x=="run nul-world.exe" || x=="run NUL-WORLD.EXE"){
+stop(0);  
+lines("Running...");
+space();
+delay = setTimeout(function(){ window.location = '/2'; }, 1000);
+	
+    scrollbottom();
+
+  }
+ 
+if (x=="exit"){
+	window.location = 'blank-null.tumblr.com';
+	return false;
+}
+
+
+}
+
+   function stop(a){
+       if(a==0){
+           
+       document.getElementById("command").style.visibility = "hidden";
+       document.getElementById("input").value = "";
+        }
+       if(a==1){
+          document.getElementById("command").style.visibility = "visible";
+          
+          
+
+       }
+   }
+   
+   
+   
+ function space(){
+    lines(" ");
+    lines(" ");
+ }
+ 
+ 
+</script>
+
+
+
+
+
+<script>
+function lines(a){
+var br = document.createElement("br");
+var line = document.getElementById("demo");
+var p = document.createElement("p");  
+var node = document.createTextNode(a);
+p.appendChild(node);
+line.appendChild(p);
+var element = document.getElementById("code");
+element.appendChild(line);
+}    
+
+function images(a, b){
+var line = document.getElementById("demo");
+var div = document.createElement("div");  
+var img = document.createElement("img");
+var br = document.createElement("br");
+img.setAttribute("src", a);
+img.setAttribute("style", "height:auto; width:70%;")
+var node = document.createTextNode(b);
+div.appendChild(node);
+div.appendChild(br);
+div.appendChild(img);
+line.appendChild(div);
+var element = document.getElementById("code");
+element.appendChild(line);
+}  
+
+
+</script>
+
+</head>
+
+<body >
+<video id="MB" style="position:absolute; top:0; left:0;" autoplay width="320" height="240">
+  <source src="http://jeamfry.com/blank_null/img/MB.mp4" type="video/mp4">
+//////
+</video>
+<audio style="opacity:0; position:absolute;top:0;left:0; z-index:-9999;" autoplay >
+  <source src="http://jeamfry.com/blank_null/audio/startup.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+<div style="visibility:hidden" id="panel">Hi... my name is...<br><br> G¦=-</div>
+
+<script>
+    $( document ).ready(function() {
+  document.getElementById("norman").style.opacity = 0;
+  $( "div.advise" ).fadeIn( 1200 );
+  $( "div.advise" ).delay( 3000 ).fadeOut( 1200 );
+  delay = setTimeout(function(){ document.getElementById("norman").style.opacity = 1 }, 19300);
+  $( "#input" ).delay( 19301 ).focus();
+ 
+});
+</script>
+
+
+<div class="advise">Press F11 for a better experience (exit using F11 again)
+</div>
+
+<script>
+    $( document ).ready(function() {
+        var colour = localStorage.getItem("color");
+      $("body").css("color", colour);
+       $("#input").css("color", colour);
+        
+    document.getElementById("text1").style.opacity = 0; 
+    document.getElementById("text2").style.opacity = 0;
+    document.getElementById("text3").style.opacity = 0; 
+    delay = setTimeout(function(){ document.getElementById("MB").style.visibility = "hidden" }, 15000);
+    delay = setTimeout(function(){ document.getElementById("text1").style.opacity = 1 }, 15000);
+    delay = setTimeout(function(){ document.getElementById("text2").style.opacity = 1 }, 16000);
+    delay = setTimeout(function(){ document.getElementById("text3").style.opacity = 1 }, 19300);
+    });
+</script>
+
+<br><br><br>
+<div class="text">
+<p class="textwait" id="text1">Welcome to Nulwo 2.0...<br>Remember that command input is case sensitive in some cases</p>
+<p class="textwait2"  id="text2">Reading files...</p>
+<p class="textwait3" id="text3">File reading complete<br>Type 'help' for a list of commands</p>
+
+<div style=" margin-left:10px; text-align:left" id="code">
+
+</div>
+
+
+
+
+<p id="demo"></p>
+<div class="command" id="command" style="visibility:visible;">
+<form id="norman" action="javascript:blank(null);">/<input onkeypress="memory()" id="input" autocomplete="off" type="text" class="blink_me" placeholder="â–ˆ" ></form>
+</div>
+
+
+</div>
+
+
+
+<a style=" visibility:hidden; font-size:35pt"href="/2">En/(& %(¿7 Stay!</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="last"> </div>
+
+   
+    
+   <script>
+$( "#norman" ).submit(function( ) {
+     var randomColor = $("#input").val();
+   
+      $("body").css("color", $( "#input" ).val());
+       $("#input").css("color", $("#input").val());
+      
+       
+        localStorage.setItem("color", randomColor);
+        // generate new styles and append to the placeholder style block
+        var styleContent = 'input:-moz-placeholder {color: ' + randomColor + ';} input::-webkit-input-placeholder {color: ' + randomColor + ';}'
+        $('#placeholder-style').text(styleContent);
+        $( "input" ).val( "" );
+        
+        
+        
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        $("#input").focus();
+    return;
+  event.preventDefault();
+});
+</script>
+
+</body>
+</html>

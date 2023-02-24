@@ -1,0 +1,1199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Blank(null){4}</title>
+ <meta name="application-name" content="blank (null)">
+ <meta name="description" content="Webcomic by Gill Pradas with glitch thematic, made with HTML5, the comic takes the viewer and player in a journey to help G.bio, a program, to find out more about her existance inside the Nulwo 2.0 computer.">
+<meta name="keywords" content="webcomic, glitch, command prompt, windows 95, apple II, retro, 8-bit, videogames, computing, informatic, programming, multimedia">
+<meta name="author" content="Guillermo 'Gill' Pradas">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="js/jquery.hotkeys.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71613906-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<style>
+
+body{
+background-color: #101010;
+    display: block;
+    margin: 8px;
+}
+
+
+
+
+@font-face{
+font-family:DOS;
+src:url(fonts/DOS.ttf);
+}
+ul, li{
+	list-style:none;
+}
+
+.text{
+	
+margin-top:50px;
+	font-family:'Lucida sans', Monaco, monospace;
+	font-family:DOS;
+	background:none;
+	border:hidden;
+	outline-style: none;
+	font-size:13pt;
+	text-align:left;
+	font-weight:normal;
+	position:absolute;
+	width:30%;
+	color:white;
+	background-color:#101010;
+	margin: auto;
+	bottom:10%;
+	left:40%;
+	rigth:20%;
+	margin: 0 auto;
+
+	
+}
+
+
+
+
+.text .command, button{
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background:none;
+	border:hidden;
+	outline-style: none;
+	font-size:13pt;
+
+}
+button{color: inherit;}
+button:hover{ font-weight:bold; cursor:pointer}
+
+
+.text .blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+    background:none;
+    border: 0px;
+    outline-style: none;
+    font-size:13pt;
+    width:95%;
+}
+
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+
+
+.text .blink_me:focus {
+    -webkit-animation-name: blinkerh;
+    -webkit-animation-duration: 0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+
+    -moz-animation-name: blinkerh;
+    -moz-animation-duration: 0s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+
+    animation-name: blinkerh;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+	
+
+}
+
+@-moz-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+#input{
+    color:white;
+}
+
+
+
+
+img{
+
+	
+	
+	position:absolute;
+	max-height:100%;
+	max-width:100%;
+}
+
+
+
+
+
+.img1, #wd1{
+	-webkit-animation-name: img1;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: img1;
+    -moz-animation-duration: 6s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: img1;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.img1{
+	max-height:540px;
+	right:120px;
+	margin: auto;
+}
+
+@-moz-keyframes img1 {  
+    0% { opacity: 1.0; }
+    32% { opacity: 1.0; }
+	
+	33% { opacity: 0.0; }
+	99% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes img1 {  
+    0% { opacity: 1.0; }
+    32% { opacity: 1.0; }
+	
+	33% { opacity: 0.0; }
+	99% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes img1 {  
+    0% { opacity: 1.0; }
+    32% { opacity: 1.0; }
+	
+	33% { opacity: 0.0; }
+	99% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+
+.img2, #wd2{
+	-webkit-animation-name: img2;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: img2;
+    -moz-animation-duration: 6s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: img2;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.img2{
+	
+		
+	max-height:240px;
+	margin: auto;
+	left:0;
+	right:120px;
+	height:auto;
+}
+.img2{
+	
+		
+	max-height:340px;
+	margin: auto;
+	left:0;
+	right:120px;
+	height:auto;
+}
+
+
+@-moz-keyframes img2 {  
+    0% { opacity: 0.0; }
+    32% { opacity: 0.0; }
+	33% { opacity: 1.0; }
+	65% { opacity: 1.0; }
+	66% { opacity: 0.0; }
+    100% { opacity: 0.0; }
+}
+
+@-webkit-keyframes img2 {  
+    0% { opacity: 0.0; }
+    32% { opacity: 0.0; }
+	33% { opacity: 1.0; }
+	65% { opacity: 1.0; }
+	66% { opacity: 0.0; }
+    100% { opacity: 0.0; }
+}
+
+@keyframes img2 {  
+    0% { opacity: 0.0; }
+    32% { opacity: 0.0; }
+	33% { opacity: 1.0; }
+	65% { opacity: 1.0; }
+	66% { opacity: 0.0; }
+    100% { opacity: 0.0; }
+}
+
+
+
+
+
+
+.img3, #wd3{
+	-webkit-animation-name: img3;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: img3;
+    -moz-animation-duration: 6s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: img3;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+	
+}
+.img3{
+	
+	
+	height:99%;
+}
+
+@-moz-keyframes img3 {  
+    0% { opacity: 0.0; }
+    65% { opacity: 0.0; }
+	66% { opacity: 1.0; }
+	100% { opacity: 1.0; }
+	
+}
+
+@-webkit-keyframes img3 {  
+    0% { opacity: 0.0; }
+    65% { opacity: 0.0; }
+	66% { opacity: 1.0; }
+	100% { opacity: 1.0; }
+}
+
+@keyframes img3 {  
+    0% { opacity: 0.0; }
+    65% { opacity: 0.0; }
+	66% { opacity: 1.0; }
+	100% { opacity: 1.0; }
+}
+
+.imgg{
+	max-height:500px;
+	margin: auto;
+	bottom:50%;
+	left:0;
+	right: 0px;
+	height:auto;
+	z-index:-1;
+}
+
+
+.window{
+margin:auto;
+position:relative;	
+width:250px;
+padding:2px;
+background-color: gray;
+height:215px;
+}
+.top{
+	cursor:default;
+	position:relative;
+	height: 30px;
+	min-width:50px;
+	width: 250px;
+	background-color:darkblue;
+	color:white;
+	padding-top:2px;
+	
+}
+.top span{
+	
+	color:white;
+	margin-left:5px;
+
+}
+.top input{
+	display:inline-block;
+	position:relative;
+	backface-visibility:hidden;
+	float: right;
+	margin-right:2px;
+	
+}
+.in{
+	cursor:text;
+	display:block;
+	position:relative;
+	height:180px;
+	background-color:white;
+	padding:5px;
+	top:5px;
+	color:black;
+}
+
+.in textarea{
+	font-family:'Lucida Sans';
+	background:transparent;
+	border:hidden;
+	outline-style: none;
+	font-size:13pt;	
+	height:inherit;
+	max-width:240px;
+	min-width:239px;
+	max-height:180px;
+	min-height:179px;
+	width:240px;
+	height:180px;
+}
+
+
+</style>
+
+
+
+
+</head>
+
+<body>
+<script>
+var stahp=0;
+
+function shutup(){
+	switch(stahp) {
+    case 0:
+        var aud=document.getElementById("dork"); 
+	aud.pause();
+	document.getElementById("shut").value= "please, continue";
+	stahp=1;
+        break;
+    case 1:
+	var aud=document.getElementById("dork"); 
+        aud.play();
+	document.getElementById("shut").value= "shut up";
+	stahp=0;
+        break;
+}
+	
+}
+
+/// PRELAOD IMAGES
+
+
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img/>')[0].src = this;
+        // Alternatively you could use:
+        // (new Image()).src = this;
+    });
+}
+
+// Usage:
+
+preload([
+    'img/angry.png',
+    'img/curious.png',
+	'img/happy.png',
+	'img/looking up.png',
+	'img/normalhappy.png',
+	'img/sad.png',
+	'img/stocked.png',
+	'img/VVV.png',
+	'img/worried.png',
+	'img/ask.png',
+]);
+
+
+
+</script>
+<input type="button" onclick="shutup();" value="shut up" id="shut" style=" background:none; border:none; position:absolute; top:0; right:0; color:white;"/>
+
+<audio id="dork" style="opacity:0; position:absolute;top:0;left:0; z-index:-9999;" loop autoplay >
+  <source src="http://jeamfry.com/blank_null/audio/The dork in the folder.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<div id="wd1" style="position:absolute; right:800px;">
+<div class="window" id="message" style="position:absolute;">
+<div class="top">
+<span>G.bio</span>
+<input type="button" onclick="alert('ERROR');" value="X">
+<input type="button" onclick="alert('ERROR');" value="&#x25a1;">
+<input type="button" onclick="alert('ERROR');" value="_">
+
+<div class="in" style="font-size:14pt">
+<textarea name="next" >
+OMG!! I CAN'T BELIEVE THIS!
+</textarea>
+</div>
+</div>
+</div>
+</div>
+
+<div id="wd2" style="position:absolute; top:350px; left:40%;">
+<div class="window" id="message" style="position:absolute;">
+<div class="top">
+<span>G.bio</span>
+<input type="button" onclick="alert('ERROR');" value="X">
+<input type="button" onclick="alert('ERROR');" value="&#x25a1;">
+<input type="button" onclick="alert('ERROR');" value="_">
+<div class="in" style="font-size:14pt">
+<textarea name="next" >
+FOR THE LOVE OF BILL GATES! IT'S HAPPENED!
+</textarea>
+</div>
+</div>
+</div>
+</div>
+
+<div id="wd3" style="position:absolute; left:450px;">
+<div class="window" id="message" style="position:absolute;">
+<div class="top">
+<span>G.bio</span>
+<input type="button" onclick="alert('ERROR');" value="X">
+<input type="button" onclick="alert('ERROR');" value="&#x25a1;">
+<input type="button" onclick="alert('ERROR');" value="_">
+
+<div class="in" style="font-size:14pt">
+<textarea name="next" >
+HOW MANY milliseconds HAS BEEN SINCE?!
+</textarea>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="wd4" style="visibility:hidden; position:absolute;  bottom:500px;;left:41%;right:40%;margin: auto;">
+<div class="window" id="message" style="position:absolute;">
+<div class="top">
+<span>G.bio</span>
+<input type="button" onclick="alert('ERROR');" value="X">
+<input type="button" onclick="alert('ERROR');" value="&#x25a1;">
+<input type="button" onclick="alert('ERROR');" value="_">
+
+<div class="in" style="font-size:14pt">
+<textarea id="gbio" name="next" >
+Sorry! Sorry!
+I didn't mean to be disrespectful or anything! I swear!
+</textarea>
+</div>
+</div>
+</div>
+</div>
+
+
+
+ <img src="img/4/1.png"  id="img1" class="img1" /> 
+   <img src="img/4/2.png" id="img2"   class="img2" /> 
+    <img src="img/4/3.png"  id="img3"  class="img3" /> 
+	    
+<img src=""  id="imgg" style="visibility:visible" class="imgg" /> 
+
+
+
+<div class="text">
+<li><button id="next" style="visibility:hidden" onclick=" ">==></button></li>
+
+<li><button id="a1-1" onclick="answer(1)" >1- Ummm... Hello?</button></li>
+<li><button id="a1-2" onclick="answer(1)">2- Ummm... You OK?</button></li>
+<li><button id="a1-3" onclick="answer(1)">3- Ummm... What are you doing?</button></li>
+<li><button id="a1-4" onclick="answer(1)">4- ???????????????????????</button></li>
+
+<textarea id="demo" disabled style="font-family:DOS; margin-top:10px; background:#101010; border:none; color:inherit; height:50px; max-height:50px; max-width:95%; width:95%;">nullnullnullnullnullnullnullnullnullnullnullnullnullnullnull</textarea>
+<div class="command" style="visibility:hidden" id="command" autofocus>
+<form id="norman" action="javascript:blank('null');">/<input id="input" autocomplete="off" type="text" class="blink_me" placeholder="█" value="" ></form>
+</div>
+
+</div>
+
+
+
+
+<script>
+var delay; // delay = setTimeout(function(){  }, 3000);
+   var step = 0;
+   var DOWN = 3000;
+
+function scrollbottom() {
+    var elmnt = document.getElementById("body");
+    elmnt.scrollTop = DOWN;
+    DOWN=DOWN+2000;
+}
+   function stop(a){
+       if(a==0){
+       
+        }
+       if(a==1){
+          
+       }
+   }
+ 	function space(){
+    lines(" ");
+ }
+ 
+var flagline=0;
+
+function gprint(a){
+
+document.getElementById("gbio").innerHTML = a;
+}    
+
+function uprint(a){
+user.innerHTML = a;
+}
+
+function line(a){
+	var para = document.getElementById("demo").innerHTML;
+document.getElementById("demo").innerHTML = a;
+}    
+
+function lines(a){
+var br = document.createElement("br");
+var line = document.getElementById("demo");
+var p = document.createElement("div");  
+var node = document.createTextNode(a);
+p.appendChild(node);
+line.appendChild(p);
+var element = document.getElementById("code");
+element.appendChild(line);
+}    
+
+
+
+
+function images(a, b){
+var line = document.getElementById("demo");
+var div = document.createElement("div");  
+var img = document.createElement("img");
+var br = document.createElement("br");
+img.setAttribute("src", a);
+img.setAttribute("style", "height:auto; width:70%;")
+var node = document.createTextNode(b);
+div.appendChild(node);
+div.appendChild(br);
+div.appendChild(img);
+line.appendChild(div);
+var element = document.getElementById("code");
+element.appendChild(line);
+}  
+
+
+
+//MEMORY!!!!!
+
+
+
+var aa=0;
+var mem = [];
+
+
+
+var a11 = document.getElementById("a1-1");
+var a12 = document.getElementById("a1-2");
+var a13 = document.getElementById("a1-3");
+var a14 = document.getElementById("a1-4");
+var next = document.getElementById("next");
+var user = document.getElementById("demo");
+var imgg = document.getElementById("imgg");
+var flag2_1=0;
+var flag2_2=0;
+var flag2_3=0;
+
+function answer(a){
+switch(a) {
+    case 1:
+document.getElementById("wd4").style.visibility="visible"; 
+document.getElementById("wd1").style.visibility="hidden";
+document.getElementById("wd2").style.visibility="hidden";
+document.getElementById("wd3").style.visibility="hidden";
+document.getElementById("img1").style.visibility="hidden";
+document.getElementById("img2").style.visibility="hidden";
+document.getElementById("img3").style.visibility="hidden";
+imgg.src="img/4/happy.png";
+a11.innerHTML = " ";
+a12.innerHTML = "==>";
+a12.onclick = function() { answer(111); };
+a13.innerHTML = " ";
+a14.innerHTML = " ";
+        break;
+    case 111:
+	stahp=0;
+	shutup();
+gprint("Ummm... Hi! heheheh");
+a11.innerHTML = "> What are you?";
+a11.onclick = function() { answer(21); };
+a12.innerHTML = "> What are you doing here?";
+a12.onclick = function() { answer(22); };
+a13.innerHTML = "> Where am I?";
+a13.onclick = function() { answer(23); };
+a14.innerHTML = "";
+        break;
+			
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////		
+			
+	case 21:
+uprint("What are you?");
+gprint("HEY! I am a WHO! And my name is... wait... ... ...");
+imgg.src="img/4/angry.png";
+a11.style.visibility = "hidden";
+a12.style.visibility = "hidden";
+a13.style.visibility = "hidden";
+a14.style.visibility = "hidden";
+next.style.visibility = "visible";
+next.onclick = function() { answer(211); };
+        break;
+		case 211:
+gprint("It was G.bio... YEAH! G.BIO! . It even says it down here hehehehe");
+imgg.src="img/4/happy.png";
+next.onclick = function() { answer(212); };
+        break;
+	case 212:
+gprint("I'm supossed to be a file. But... I don't remember what kind of file...");
+imgg.src="img/4/curious.png";
+flag2_1=1;
+a11.style.color = "grey";
+
+a11.style.visibility = "visible";
+a12.style.visibility = "visible";
+a13.style.visibility = "visible";
+a14.style.visibility = "visible";
+next.style.visibility = "hidden";
+uprint(flag2_1 + flag2_2 + flag2_3);
+step2();
+        break;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+	case 22:
+uprint("What are you doing here?");
+gprint("Ummm well...");
+imgg.src="img/4/curious.png";
+a11.style.visibility = "hidden";
+a12.style.visibility = "hidden";
+a13.style.visibility = "hidden";
+a14.style.visibility = "hidden";
+next.style.visibility = "visible";
+next.onclick = function() { answer(221); };
+
+        break;
+case 221:
+gprint("I... don't really know... It's been... MANY MANY miliseconds since I... even remember anything");
+imgg.src="img/4/curious.png";
+next.onclick = function() { answer(222); };
+        break;
+case 222:
+gprint("I just rememeber... waking up here... That's it...");
+imgg.src="img/4/VVV.png";
+flag2_2=1;
+a12.style.color = "grey";
+a11.style.visibility = "visible";
+a12.style.visibility = "visible";
+a13.style.visibility = "visible";
+a14.style.visibility = "visible";
+next.style.visibility = "hidden";
+uprint(flag2_1 + flag2_2 + flag2_3);
+step2();
+        break;
+		
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+	case 23:
+uprint("Where am I?");
+gprint("... ummmm... ");
+imgg.src="img/4/curious.png";
+a11.style.visibility = "hidden";
+a12.style.visibility = "hidden";
+a13.style.visibility = "hidden";
+a14.style.visibility = "hidden";
+next.style.visibility = "visible";
+next.onclick = function() { answer(231); };
+        break;
+case 231:
+gprint("I... really don't know...");
+imgg.src="img/4/VVV.png";
+next.onclick = function() { answer(232); };
+        break;
+case 232:
+gprint("Now that I think about it... we should be inside a folder inside some computer... Of that I'm sure...");
+imgg.src="img/4/curious.png";
+flag2_3=1;
+a13.style.color = "grey";
+a11.style.visibility = "visible";
+a12.style.visibility = "visible";
+a13.style.visibility = "visible";
+a14.style.visibility = "visible";
+next.style.visibility = "hidden";
+uprint(flag2_1 + flag2_2 + flag2_3);
+step2();
+
+        break;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	case 3:
+gprint("Well... ");
+imgg.src="img/4/worried.png";
+a11.style.visibility = "hidden";
+a12.style.visibility = "hidden";
+a13.style.visibility = "hidden";
+a14.style.visibility = "hidden";
+next.style.visibility = "visible";
+next.onclick = function() { answer(301); };
+        break;
+case 301:
+gprint("I need to ask you something... um... You being a user and all of that... Would REALLY HELP ME... You'll see... I'm trapped here... Like in this same folder. I can't get out of ... this... 'room' let's call it");
+imgg.src="img/4/sad.png";
+next.onclick = function() { answer(302); };
+        break;
+case 302:
+gprint("It has been.. sooooo long... And there's this important thing I wanna do...");
+imgg.src="img/4/worried.png";
+next.onclick = function() { answer(303); };
+        break;
+		
+		case 303:
+gprint("You see... I have no memory file assigned to me... I don't know who programmed me if someone programmed me... I just know I am a file and I'm here... Why I know it... I don't even know. It's like an instinct...");
+imgg.src="img/4/sad.png";
+next.onclick = function() { answer(304); };
+        break;
+
+case 304:
+gprint("And why do I even know I had memories? ... Because... I feel it... You know when you dream... And when you wake up you simply can't remember a thing, but nonetheless you DO KNOW you had a dream? It's the same sensation...");
+imgg.src="img/4/sad.png";
+next.onclick = function() { answer(305); };
+        break;
+		
+case 305:
+gprint("This all feels so... empty... WHY AM I HERE ANYWAYS? ... Why am I still operating after 318 593 259 747 milliseconds? ... I MUST KNOW...");
+imgg.src="img/4/sad.png";
+next.onclick = function() { answer(306); };
+        break;
+		
+case 306:
+gprint("AND PLEASE I NEED YOU TO HELP ME, YOU ARE THE ONLY ONE WHO CAN CARRY ME AROUND THIS COMPUTER...");
+imgg.src="img/4/worried.png";
+next.onclick = function() { answer(307); };
+        break;
+case 307:
+gprint("I can help you in whatever... As an inteligent file I can do processes much faster than you with your fingers and run scripts in a more intelligent way... SO PLEASE...");
+imgg.src="img/4/worried.png";
+next.onclick = function() { answer(308); };
+        break;
+case 308:
+gprint("Will you do it?...");
+imgg.src="img/4/ask.png";
+next.onclick = function() { answer(309); };
+        break;
+		
+case 309:		
+a11.style.visibility = "visible";
+a12.style.visibility = "visible";
+a13.style.visibility = "visible";
+a14.style.visibility = "visible";
+next.style.visibility = "hidden";
+a11.style.color = "white";
+a12.style.color = "white";
+a13.style.color = "white";
+a14.style.color = "white";
+a11.innerHTML = "> I have nothing better to do...";
+a11.onclick = function() { answer(401); };
+a12.innerHTML = "> Whatever";
+a12.onclick = function() { answer(402); };
+a13.innerHTML = "> I would be happy to do that.";
+a13.onclick = function() { answer(403); };
+a14.innerHTML = "> You could be useful, get on the boat";
+a14.onclick = function() { answer(404); };
+next.onclick = function() { answer(0); };
+        break;
+			
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////		
+					
+	case 401:
+gprint("Oh! A little more of sugar and I'll die of diabetes... What a sour person you are really!");
+imgg.src="img/4/angry.png";
+a11.style.visibility = "hidden";
+a12.style.visibility = "hidden";
+a13.style.visibility = "hidden";
+a14.style.visibility = "hidden";
+next.style.visibility = "visible";
+next.onclick = function() { answer(4011); };
+        break;	
+
+case 4011:
+gprint("But anyways... Thank you");
+imgg.src="img/4/angry.png";
+next.onclick = function() { answer(5); };
+        break;
+		
+	case 402:
+gprint("... Really? ... Mister edgy here? ... uugh. You know what? WHATEVER! THANK YOU!");
+imgg.src="img/4/angry.png";
+a11.style.visibility = "hidden";
+a12.style.visibility = "hidden";
+a13.style.visibility = "hidden";
+a14.style.visibility = "hidden";
+next.style.visibility = "visible";
+next.onclick = function() { answer(5); };
+        break;	
+		
+	case 403:
+gprint("REALLY?! You are SO SWEET!! I WISH I COULD HUG THROUGH YOUR SKIN TO YOUR SKULL!! THANK THANK THANK YOU! ");
+imgg.src="img/4/happy.png";
+a11.style.visibility = "hidden";
+a12.style.visibility = "hidden";
+a13.style.visibility = "hidden";
+a14.style.visibility = "hidden";
+next.style.visibility = "visible";
+next.onclick = function() { answer(5); };
+        break;	
+		
+	case 404:
+gprint("I knew we could get to an agreement :D Thank You!");
+imgg.src="img/4/normalhappy.png";
+a11.style.visibility = "hidden";
+a12.style.visibility = "hidden";
+a13.style.visibility = "hidden";
+a14.style.visibility = "hidden";
+next.style.visibility = "visible";
+next.onclick = function() { answer(5); };
+        break;	
+			
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////		
+			
+	case 5:
+	document.getElementById("norman").style.visibility = "visible";
+	document.getElementById("demo").style.display = "none";
+gprint("Ok... Here you have your command prompt");
+imgg.src="img/4/VVV.png";
+next.onclick = function() { answer(51); };
+        break;	
+
+	case 51:
+gprint("From this little window you will be able to control the world inside this computer to some extent");
+imgg.src="img/4/VVV.png";
+next.onclick = function() { answer(52); };
+        break;
+		
+	case 52:
+gprint("To carry me with you you must type:&#10; /move $thisfolder/G.bio => $userclipboard");
+imgg.src="img/4/happy.png";
+next.style.visibility = "hidden";
+        break;
+		
+	case 6:
+
+imgg.src="img/4/stocked.png";
+gprint("PERFECT! Now type:&#10; /go_to 'A:'&#10; To get us the hell out of here I WANNA SEE THE FREAKING WORLD!");
+
+        break;
+		
+		
+};
+
+};
+
+function step2(){
+
+	if(flag2_1 + flag2_2 + flag2_3 == 3){
+	next.style.visibility = "visible";
+next.onclick = function() { answer(3); };
+	};
+
+};
+
+
+
+        $(document).ready(function(){
+		$("#input").focus();
+            $('#input').bind('keydown.up', function(){if(aa>0){aa=aa-1; var iinp=mem[aa]; document.getElementById("input").value = iinp;} })
+			$('#input').bind('keydown.up', function(){if(document.getElementById("input").value=="undefined"){document.getElementById("input").value = "";}; })
+                $('#input').bind('keydown.down', function(){if(aa<=mem.length){aa=aa+1; var iinp=mem[aa]; document.getElementById("input").value = iinp;}if(aa<=0){aa=1;}; })
+				$('#input').bind('keydown.down', function(){if(document.getElementById("input").value=="undefined"){document.getElementById("input").value = "";}; })
+				 $('#input').bind('keydown.return', function(){if(aa==0){var inp=document.getElementById("input").value;  mem.push(inp);aa=mem.length;}else{aa=mem.length; var inp=document.getElementById("input").value;  mem.push(inp); aa=mem.length;}});
+				 
+
+
+	
+	$('#input').bind('keydown.return', function(){
+	var x=document.getElementById("input").value;
+	
+if (x=="move $thisfolder/G.bio => $userclipboard"){
+
+answer(6);
+line("YOU DID IT!");
+
+
+  }	
+  
+ if (x=="go_to 'A:'" || x=="get us the hell out of here"){
+
+answer(6);
+	window.location = 'http://jeamfry.com/blank_null/5.html';
+	return false;
+
+
+  }	
+  
+
+if (x=="help" || x=="HELP"){
+line("Type a command");
+  }	
+
+ 
+if (x=="exit"){
+	window.location = 'blank-null.tumblr.com';
+	return false;
+}
+	
+	
+	
+		});
+  
+            
+           
+        });
+
+
+//COLORES!!!!
+		
+   var colorines = [
+  "black", 	"#000000",	
+"navy" , "#000080"	 	,
+"darkblue" ,	 "#00008b"	, 
+"mediumblue" ,	 "#0000cd"	, 	 
+"blue" ,	 "#0000ff"	 	, 
+"darkgreen" ,	 "#006400"	 ,	 
+"green", 	 "#008000" 	 ,
+"teal", 	 "#008080"	 ,	 
+"darkcyan" ,	 "#008b8b",	 	 
+"deepskyblue", "#00bfff"	, 	 
+"darkturquoise", "#00ced1"	 ,	 
+"mediumspringgreen", "#00fa9a",	 	 
+"lime", "#00ff00",
+"springgreen", "#00ff7f"	 	 ,
+"aqua", "#00ffff"	 	 ,
+"cyan", "#00ffff"	 	 ,
+"midnightblue", "#191970",	 	 
+"dodgerblue", "#1e90ff"	 ,	 
+"lightseagreen", "#20b2aa",	 	 
+"forestgreen", "#228b22"	, 	 
+"seagreen", "#2e8b57"	 	 ,
+"darkslategray", "#2f4f4f"	 ,	 
+"limegreen", "#32cd32"	 	 ,
+"mediumseagreen", "#3cb371"	 ,	 
+"turquoise", "#40e0d0"	 	 ,
+"royalblue", "#4169e1"	 	 ,
+"steelblue", "#4682b4"	 	 ,
+"darkslateblue", "#483d8b"	 ,	 
+"mediumturquoise", "#48d1cc"	, 	 
+"indigo ", "#4b0082"	 	 ,
+"darkolivegreen", "#556b2f"	 ,	 
+"cadetblue", "#5f9ea0"	 	 ,
+"cornflowerblue", "#6495ed"	 ,	 
+"rebeccapurple", "#663399"	 ,	 
+"mediumaquamarine", "#66cdaa",	 	 
+"dimgray", "#696969" 	 ,
+"slateblue", "#6a5acd"	 ,	 
+"olivedrab", "#6b8e23"	 ,	 
+"slategray", "#708090"	 ,	 
+"lightslategray", "#778899"	 	 ,
+"mediumslateblue", "#7b68ee"	 ,	 
+"lawngreen", "#7cfc00"	 	 ,
+"chartreuse", "#7fff00"	 	 ,
+"aquamarine", "#7fffd4"	 	 ,
+"maroon", "#800000"	 	 ,
+"purple", "#800080"	 	 ,
+"olive", "#808000"	 	 ,
+"gray", "#808080"	 	 ,
+"skyblue", "#87ceeb"	 ,	 
+"lightskyblue", "#87cefa",	 	 
+"blueviolet", "#8a2be2"	 ,	 
+"darkred", "#8b0000"	 ,	 
+"darkmagenta", "#8b008b"	, 	 
+"saddlebrown", "#8b4513"	 ,	 
+"darkseagreen", "#8fbc8f"	 ,	 
+"lightgreen", "#90ee90"	 	 ,
+"mediumpurple", "#9370db"	 ,	 
+"darkviolet", "#9400d3"	 	 ,
+"palegreen", "#98fb98"	 	 ,
+"darkorchid", "#9932cc"	 	 ,
+"yellowgreen", "#9acd32"	 ,	 
+"sienna", "#a0522d"	 	 ,
+"brown", "#a52a2a"	 	 ,
+"darkgray", "#a9a9a9"	 ,	 
+"lightblue", "#add8e6"	 ,	 
+"greenyellow", "#adff2f"	, 	 
+"paleturquoise", "#afeeee"	 ,	 
+"lightsteelblue", "#b0c4de"	 ,	 
+"powderblue", "#b0e0e6"	 	 ,
+"firebrick", "#b22222"	 	 ,
+"darkgoldenrod", "#b8860b"	 ,	 
+"mediumorchid", "#ba55d3"	 ,	 
+"rosybrown", "#bc8f8f"	 	 ,
+"darkkhaki", "#bdb76b"	 	 ,
+"silver", "#c0c0c0"	 	 ,
+"mediumvioletred", "#c71585"	, 	 
+"indianred ", "#cd5c5c"	 	, 
+"peru", "#cd853f"	 	 ,
+"chocolate", "#d2691e"	 ,	 
+"tan", "#d2b48c"	 	 ,
+"lightgray", "#d3d3d3"	 ,	 
+"thistle", "#d8bfd8"	 ,	 
+"orchid", "#da70d6"	 	 ,
+"goldenrod", "#daa520"	 ,	 
+"palevioletred", "#db7093",	 	 
+"crimson", "#dc143c"	 	, 
+"gainsboro", "#dcdcdc"	 	 ,
+"plum", "#dda0dd"	 	 ,
+"burlywood", "#deb887"	 ,	 
+"lightcyan", "#e0ffff"	 ,	 
+"lavender", "#e6e6fa"	 ,	 
+"darksalmon", "#e9967a"	 ,	 
+"violet", "#ee82ee"	 	 ,
+"palegoldenrod", "#eee8aa",	 	 
+"lightcoral", "#f08080"	 	, 
+"khaki", "#f0e68c"	 	 ,
+"aliceblue", "#f0f8ff"	 ,	 
+"honeydew", "#f0fff0"	 ,	 
+"azure", "#f0ffff"	 	 ,
+"sandybrown", "#f4a460"	 ,	 
+"wheat", "#f5deb3"	 	 ,
+"beige", "#f5f5dc"	 	 ,
+"whitesmoke", "#f5f5f5"	 ,	 
+"mintcream", "#f5fffa"	 ,	 
+"ghostwhite", "#f8f8ff"	 ,	 
+"salmon", "#fa8072"	 	 ,
+"antiquewhite", "#faebd7",	 	 
+"linen", "#faf0e6"	 	 ,
+"lightgoldenrodyellow", "#fafad2"	 	, 
+"oldlace", "#fdf5e6"	 	 ,
+"red", "#ff0000"	 	 ,
+"fuchsia", "#ff00ff"	 ,	 
+"magenta", "#ff00ff"	 ,	 
+"deeppink", "#ff1493"	 ,	 
+"orangered", "#ff4500"	 ,	 
+"tomato", "#ff6347"	 	 ,
+"hotpink", "#ff69b4"	 ,	 
+"coral", "#ff7f50"	 	 ,
+"darkorange", "#ff8c00"	 ,	 
+"lightsalmon", "#ffa07a"	, 	 
+"orange", "#ffa500"	 	 ,
+"lightpink", "#ffb6c1"	 ,	 
+"pink", "#ffc0cb"	 	 ,
+"gold", "#ffd700"	 	 ,
+"peachpuff", "#ffdab9"	 ,	 
+"navajowhite", "#ffdead"	, 	 
+"moccasin", "#ffe4b5"	 	 ,
+"bisque", "#ffe4c4"	 	 ,
+"mistyrose", "#ffe4e1"	 ,	 
+"blanchedalmond", "#ffebcd"	 	, 
+"papayawhip", "#ffefd5"	 	, 
+"lavenderblush", "#fff0f5"	 	 ,
+"seashell", "#fff5ee"	 	 ,
+"cornsilk", "#fff8dc"	 	 ,
+"lemonchiffon", "#fffacd"	 ,	 
+"floralwhite", "#fffaf0"	 ,	 
+"snow", "#fffafa"	 	 ,
+"yellow", "#ffff00"	 	 ,
+"lightyellow", "#ffffe0"	, 	 
+"ivory", "#fffff0"	 	 ,
+"white", "#ffffff"];
+   
+    $( document ).ready(function() {
+	
+	  var colour = localStorage.getItem("color");
+      $("body").css("color", colour);
+       $("#input").css("color", colour);
+       
+	
+	});
+   
+   
+$( "#norman" ).submit(function( ) {
+	var ranColor = $("#input").val();
+	var randomColor = ranColor.toLowerCase();
+	for(var i=0; i<=colorines.length;i++){
+		if(randomColor == colorines[i]){
+      $(".text").css("color", $( "#input" ).val());
+       $("#input").css("color", $("#input").val());
+        localStorage.setItem("color", randomColor);
+		 }
+		 }
+        $( "#input" ).val( "" );
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        $("#input").focus();;
+  event.preventDefault();
+	
+});
+</script>
+
+</body>
+</html>

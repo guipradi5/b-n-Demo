@@ -1,0 +1,6 @@
+v4.3:
+- ScrollBottom fixed in /run g.bio and /run Nul-World.exe
+-Added some notes
+
+v4.3.2:
+-Made so "return" is the only command that inputs commands (how it should be)

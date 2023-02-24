@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<title>Connecting to [Nulwo_IP]</title>
+ <meta name="application-name" content="blank (null)">
+  <link rel="shortcut icon" href="img/logo.png">
+ <meta name="description" content="Webcomic by Gill Pradas with glitch thematic, made with HTML5, the comic takes the viewer and player in a journey to help G.bio, a program, to find out more about her existance inside the Nulwo 2.0 computer.">
+<meta name="keywords" content="webcomic, glitch, command prompt, windows 95, apple II, retro, 8-bit, videogames, computing, informatic, programming, multimedia">
+<meta name="author" content="Guillermo 'Gill' Pradas">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71613906-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style>
+
+@font-face{
+font-family:DOS;
+src:url(fonts/DOS.ttf);
+}
+
+
+.buttons-container, .non-admin-buttons-container{
+    visibility:hidden;
+}
+
+iframe{
+    visibility:hidden;
+}
+body{
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background-color: #101010;
+	font-weight:bold;
+	color:white;
+	text-align:center;
+	font-size:13pt;
+
+}
+
+
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background-color: black;
+    border-left: 0px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+nav{
+        
+    position:absolute;
+    top:0;
+    width:100%;
+    height:10%;
+    background-color:white;
+    
+}
+
+nav ul{
+position:absolute;
+    right:30px;
+    
+}
+
+
+
+nav li{
+    position:relative;
+    line-height:300%;
+    display:inline-block;
+	
+    
+    
+}
+
+nav li a{
+    color:grey;
+	text-decoration:none;  
+	padding:46px;
+	font-size:13pt;
+
+}
+
+nav li a:hover{
+    color:white;
+	text-decoration:none;    
+	background-color:black;
+
+}
+
+
+#panel{
+    position:relative;
+background-color:white;
+color:black;
+heigth:70%;
+width:70%;
+padding:20px;
+margin-top:200px;
+left:15%;
+right:15%;
+}
+
+#next{
+    
+    margin-top: 20Px;
+}
+
+#input{
+    color:white;
+}
+
+.advise{
+position:absolute;
+background-color:white;
+color:black;
+width:70%;
+padding:20px;
+background-color:rgba(254,254,254,0.8);
+left:15%;
+right:15%;
+color:rgba(0,0,0,0.8);
+border:3px solid blue;
+}
+
+
+
+
+.text{
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background:none;
+	border:hidden;
+	outline-style: none;
+	font-size:13pt;
+	float:left;
+	text-align:left;
+	margin-left:20px;
+	font-weight:normal;
+	width:90%;
+	
+}
+
+
+
+
+.text .command{
+	
+	font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+	background:none;
+	border:hidden;
+	outline-style: none;
+	font-size:13pt;
+
+}
+
+
+.text .blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    font-family:'Lucida Console', Monaco, monospace;
+	font-family:DOS;
+    background:none;
+    border:hidden;
+    outline-style: none;
+    font-size:13pt;
+    width:70%;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+
+
+.text .blink_me:focus {
+    -webkit-animation-name: blinkerh;
+    -webkit-animation-duration: 0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+
+    -moz-animation-name: blinkerh;
+    -moz-animation-duration: 0s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+
+    animation-name: blinkerh;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+	
+
+}
+
+@-moz-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinkerh {  
+    0% { opacity: 1.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+#counter{
+position:absolute;
+float:left;
+top:5px;
+
+	
+}
+
+</style>
+
+<style id="placeholder-style">
+input:-moz-placeholder {color:  ;} 
+input::-webkit-input-placeholder {color: ;}
+</style>
+
+
+</head>
+
+<body>
+
+
+
+
+<pre style="font: 10px/5px monospace;">                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                             ;;#@@@@@@@@@@@@+;:                                                                                         
+                                                                                       ``@@@@@@@@@@@@@@@@@@@@@@@@@;`                                                                                    
+                                                                                    ;@@@@@@@@@+:`          `:#@@@@@@@@;                                                                                 
+                                                                                .@@@@@@@#;                        +@@@@@@+                                                                              
+                                                                             `+@@@@@@,                               ,@@@@@@'                                                                           
+                                                                          .@@@@@@'                                       '@@@@@,                                                                        
+                                                                        +@@@@@:                                            .@@@@@+                                                                      
+                                                                     ,@@@@@;                                                  .@@@@@.                                                                   
+                                                                   #@@@@#`                                                       '@@@@'                                                                 
+                                                                :@@@@@                                                             .@@@@+                                                               
+                                                              #@@@@;                                                                 `#@@@#                                                             
+                                                            +@@@@,                                                                      '@@@#                                                           
+                                                         `@@@@#                                                                           +@@@@`                                                        
+                                                        @@@@;                                                                               ;@@@#                                                       
+                                                      #@@@:                                                                                   '@@@#                                                     
+                                                      @@,                                                                                       '@@@;                                                   
+                                                      @;                                                                                          +@@@                                                  
+                                                      @;                                                                                            @@                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                                                                             @                                                  
+                                                      @;                                  :                      ,                                   @                                                  
+                                                      @;                                 `@                     `@                                   @                                                  
+                                                      @;                                 @@@                    @@@                                  @                                                  
+                                                      @;                                '@@@.                  ;@@@.                                 @                                                  
+                                                      @;                                @@@@@                  @@@@@                                 @                                                  
+                                                      @;                               #@@@@@'                +@@@@@#                                @                                                  
+                                                      @;                              `@@@@@@                 ,@@@@@@                                @                                                  
+                                                      @;                              @@@@@@;                  @@@@@@@                               @                                                  
+                                                      @;                             :@@@@@@                    @@@@@@`                              @                                                  
+                                                      @;                             @@@@@@`                    #@@@@@@                              @                                                  
+                                                      @;                            .@@@@@@                      @@@@@@`                             @                                                  
+                                                      @;                            @@@@@@`                      '@@@@@@                             @                                                  
+                                                      @;                           .@@@@@@                        @@@@@@`                            @                                                  
+                                                      @;                           @@@@@@                         '@@@@@@                            @                                                  
+                                                      @;                          `@@@@@@                          @@@@@@                            @                                                  
+                                                      @;                          @@@@@@`                          @@@@@@#                           @                                                  
+                                                      @;                          @@@@@@                            @@@@@@                           @                                                  
+                                                      @;                         :@@@@@,                            @@@@@@`                          @                                                  
+                                                      @;                         @@@@@@                             `@@@@@@                          @                                                  
+                                                      @;                         @@@@@+                              @@@@@@                          @                                                  
+                              @@@@@@@@@@@@@@@@@@@@@@@@@;                        #@@@@@`                              +@@@@@;                         @@@@@@@@@@@@@@@@@@@@@@@@                           
+                              @@@@@@@@@@@@@@@@@@@@@@@@@                         @@@@@@                                @@@@@@                         @@@@@@@@@@@@@@@@@@@@@@@@,                          
+                              #@                                               `@@@@@'                                @@@@@@                                                @                           
+                              ,@                                               +@@@@@                                 ;@@@@@,                                              `@                           
+                              `@                                               @@@@@@                                  @@@@@@                                              .@                           
+                               @                                               @@@@@#                                  @@@@@@                                              #@                           
+                               @.                                             ,@@@@@`                                  #@@@@@                                              @#                           
+                               @:                                             @@@@@@                                   .@@@@@'                                             @,                           
+                               @@                                             @@@@@@                                    @@@@@@                                             @                            
+                               +@                                             @@@@@+                                    @@@@@@                                            .@                            
+                               `@                                            .@@@@@`                                    +@@@@@                                            :@                            
+                                @                                            ;@@@@@                                     `@@@@@,                                           @+                            
+                                @                                            @@@@@@                                      @@@@@+                                           @`                            
+                                @;                                           @@@@@@                                      @@@@@@                                           @                             
+                                #@                                           @@@@@+                                      @@@@@@                                          `@                             
+                                ;@                                           @@@@@`                                      @@@@@@                                          ;@                             
+                                 @                                          `@@@@@                                       ;@@@@@                                          @+                             
+                                 @`                                         '@@@@@                                        @@@@@.                                         @:                             
+                                 @;                                         '@@@@@                                        @@@@@;                                         @                              
+                                 @@                                         @@@@@@                                        @@@@@+                                        `@                              
+                                 :@                                         @@@@@@                                        @@@@@#                                        +@                              
+                                  @                                         @@@@@@                                        @@@@@@                                        @:                              
+                                  @.                                        @@@@@;                                        @@@@@@                                        @`                              
+                                  @+                                        @@@@@;                                        @@@@@@                                       .@                               
+                                  #@                                        @@@@@;                                        @@@@@@                                       '@                               
+                                  .@                                        @@@@@,                                        @@@@@@                                       @#                               
+                                   @                                        @@@@@                                         @@@@@@                                       @.                               
+                                   @:                                       @@@@@                                         @@@@@@                                       @                                
+                                   @@                                       @@@@@                                         @@@@@@                                      :@                                
+                                   ;@                                       @@@@@                                         @@@@@@                                      @+                                
+                                    @                                       @@@@@                                         @@@@@@                                      @`                                
+                                    @.                                      @@@@@`                                        @@@@@@                                      @                                 
+                                    @#                                      @@@@@;                                        @@@@@@                                     '@                                 
+                                    ;@                                      @@@@@;                                        @@@@@@                                     @#                                 
+                                     @                                      @@@@@;                                        @@@@@@                                     @                                  
+                                     @.                                     @@@@@#                                        @@@@@@                                    .@                                  
+                                     @+                                     @@@@@@                                        @@@@@@                                    #@                                  
+                                     :@                                     @@@@@@                                        @@@@@+                                    @;                                  
+                                      @                                     @@@@@@                                        @@@@@'                                    @                                   
+                                      @:                                    #@@@@@                                        @@@@@.                                   :@                                   
+                                      #@                                    '@@@@@                                        @@@@@`                                   @#                                   
+                                      .@                                    :@@@@@`                                      ;@@@@@                                    @.                                   
+                                       @.                                    @@@@@:                                      #@@@@@                                   ,@                                    
+                                       @#                                    @@@@@+                                      @@@@@@                                   @@                                    
+                                       '@                                    @@@@@@                                      @@@@@@                                   @,                                    
+                                        @                                    @@@@@@                                      @@@@@'                                  `@                                     
+                                        @'                                   '@@@@@                                     `@@@@@                                   #@                                     
+                                        ;@                                   ,@@@@@,                                    +@@@@@                                   @:                                     
+                                         @                                    @@@@@@                                    @@@@@@                                  .@                                      
+                                         @'                                   @@@@@@                                    @@@@@#                                  #@                                      
+                                         @@                                   @@@@@@                                   .@@@@@`                                  @,                                      
+                                         `@                                   ,@@@@@:                                  #@@@@@                                  :@                                       
+                                          @#                                   @@@@@@                                  @@@@@@                                  @@                                       
+                                          +@                                   @@@@@@                                  @@@@@'                                  @`                                       
+                                           @                                   +@@@@@,                                ;@@@@@                                  ;@                                        
+                                           @#                                  `@@@@@@                                @@@@@@                                  @#                                        
+                                           ;@                                   @@@@@@                                @@@@@+                                 `@                                         
+                                            @,                                  +@@@@@;                              +@@@@@                                  #@                                         
+                                            @@                                   @@@@@@                              @@@@@@                                  @:                                         
+                                            `@                                   @@@@@@`                            .@@@@@'                                 +@                                          
+                                             @#                                  :@@@@@@                            @@@@@@                                  @#                                          
+                                             +@                                   @@@@@@                            @@@@@@                                 ,@                                           
+                                              @:                                  @@@@@@'                          @@@@@@`                                 @@                                           
+                                              #@                                   @@@@@@                          @@@@@@                                  @`                                           
+                                               @.                                  @@@@@@'                        +@@@@@;                                 @@                                            
+                                               @@                                  `@@@@@@                        @@@@@@                                  @,                                            
+                                               `@`                                  @@@@@@'                      #@@@@@:                                 #@                                             
+                                                @@                                  `@@@@@@                      @@@@@@                                 `@,                                             
+                                                .@`                                  @@@@@@@                    @@@@@@'                                 @@                                              
+                                                 @@                                  `@@@@@@                   `@@@@@@                                 `@.                                              
+                                                 .@,                                  @@@@@@@                  @@@@@@;                                 @@                                               
+                                                  @@                                   @@@@@@,                '@@@@@@                                 .@.                                               
+                                                  `@;                                  #@@@@@`                '@@@@@.                                 @@                                                
+                                                   @@                                   @@@@+                  @@@@#                                 :@                                                 
+                                                    @#                                  ;@@@                   ,@@@                                  @@                                                 
+                                                    '@`                                  @@,                    #@:                                 @@                                                  
+                                                     @@                                   @                      @                                 `@:                                                  
+                                                     `@+                                                                                           @@                                                   
+                                                      #@                                                                                          +@                                                    
+                                                       @@                                                                                        .@'                                                    
+                                                       ,@#                                                                                       @@                                                     
+                                                        @@                                                                                      #@`                                                     
+                                                         @@                                                                                    ;@;                                                      
+                                                         `@#                                                                                   @@                                                       
+                                                          +@,                                                                                 @@                                                        
+                                                           @@                                                                                #@,                                                        
+                                                            @@                                                                              ,@#                                                         
+                                                            .@@                                                                            `@@                                                          
+                                                             ;@+                                                                           @@                                                           
+                                                              #@,                                                                         @@`                                                           
+                                                               @@`                                                                       +@;                                                            
+                                                                @@                                                                      '@#                                                             
+                                                                 @@                                                                    .@@                                                              
+                                                                 .@@                                                                  `@@                                                               
+                                                                  ;@@                                                                 @@                                                                
+                                                                   '@@                                                               @@.                                                                
+                                                                    #@#                                                             @@.                                                                 
+                                                                     @@#                                                           @@'                                                                  
+                                                                      @@#                                                         #@+                                                                   
+                                                                       @@+                                                       #@#                                                                    
+                                                                        @@+                                                     @@#                                                                     
+                                                                         @@'                                                   +@@                                                                      
+                                                                          @@#                                                 @@@                                                                       
+                                                                           @@#                                               #@@                                                                        
+                                                                            #@@                                             #@@                                                                         
+                                                                             @@@                                           #@@                                                                          
+                                                                              +@@                                         @@@                                                                           
+                                                                               +@@                                       @@@                                                                            
+                                                                                ;@@`                                    @@+                                                                             
+                                                                                 ,@@,                                  @@#                                                                              
+                                                                                  `@@+                                @@;                                                                               
+                                                                                    @@@                             .@@`                                                                                
+                                                                                     @@@                           '@@.                                                                                 
+                                                                                      +@@`                        '@@                                                                                   
+                                                                                       ,@@;                      #@@                                                                                    
+                                                                                         @@@                    @@#                                                                                     
+                                                                                          @@@                 `@@'                                                                                      
+                                                                                           '@@:              +@@,                                                                                       
+                                                                                            `@@#            #@@`                                                                                        
+                                                                                              @@@`         @@@                                                                                          
+                                                                                               #@@'      :@@+                                                                                           
+                                                                                                .@@@    @@@.                                                                                            
+                                                                                                  @@@'`@@@                                                                                              
+                                                                                                   ,@@@@;                                                                                               
+                                                                                                     @@                                                                                                 
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+</pre>
+<pre id="nulwo">                                                                                                    
+                                              `.-----..`                                            
+                                    `-/+++++//:---..--:/++++++/-`                                   
+                              -/++++/-`                       `-/+++/-`                             
+                           o+/-`                                     -/+++-                         
+                          `s                                              y                         
+                          `s                                              y                         
+                          `s                                              y                         
+                          `s                ``          .                 h                         
+                          `s               /NN:        yMd.               h                         
+                          `s             `hMN+         .hMM+              h                         
+                          `s            .mMm.            oMMs             h                         
+               s++++////////           .NMm`              +MMy            o///////+++o:             
+               y`                      mMN.                oMM+                      s.             
+               -+                     +MM/                  mMN`                    `s              
+                y`                    NMN                   /MMo                    s.              
+                -o                   .MMy                   `MMh                   -o               
+                 s.                  :MMo                    MMm                   y                
+                 `y                  -MMs                   `MMd                  o-                
+                  :+                 `MMd                   -MMs                 /+                 
+                   o:                 yMM-                  yMM-                -s                  
+                    s-                .MMd                 -MMy                .s                   
+                     s.                /MMy               .NMm`               .s                    
+                      s-                +MMy             .mMm`               -s                     
+                       +/                /NMd.          /NMh`               /+                      
+                        :o`               .hMN:        yMN+               `s-                       
+                         `o/                //         `o`               +o`                        
+                           .o:                                         /o.                          
+                             -o/                                     /o.                            
+                               .++`                               `++.                              
+                                 `/o:                           :o+`                                
+                                    .++-                     .++-                                   
+                                       -++:               .++:                                      
+                                          .++/`        -++:                                         
+                                             `/++:``/++-                                            
+                                                 .//`                                               
+                                                                                                    
+</pre>   
+   
+   
+ 
+    
+
+
+
+</body>
+</html>
